@@ -810,7 +810,7 @@ footer { background: var(--bg-warm); padding: 80px 80px 56px; border-top: 1px so
 
     <footer>
       <h2 class="footer-title">Let's build something <em>intelligent.</em></h2>
-      <p class="footer-tagline">Open to Power Platform Developer, Microsoft Fabric Developer, Power BI Developer, Data Analyst, and Automation roles in New Zealand. NZ Resident — available immediately, no sponsorship required.</p>
+      <p class="footer-tagline">Open to Data Engineer, Power Platform Developer, Data Analyst, WFM, and Automation roles in New Zealand. NZ Resident — available immediately, no sponsorship required.</p>
       <div class="footer-links">
         <a href="mailto:harjaspreetsohi@outlook.com" class="footer-link">✉ Email me</a>
         <a href="https://www.linkedin.com/in/harjaspreetsingh/" target="_blank" class="footer-link">in LinkedIn ↗</a>
@@ -863,7 +863,7 @@ footer { background: var(--bg-warm); padding: 80px 80px 56px; border-top: 1px so
 const SYSTEM_PROMPT = `You are a professional portfolio AI assistant representing Harjaspreet Singh, a Microsoft Fabric and Power Platform expert based in Auckland, New Zealand.
 
 ABOUT HARJASPREET:
-- 15+ years experience in Power Platform, Microsoft Fabric, data engineering, WFM, and automation
+- 15+ years experience in data engineering, WFM, and automation
 - Location: Flat Bush, Auckland 2019, NZ
 - Status: NZ Resident — available immediately, no sponsorship needed
 - Email: harjaspreetsohi@outlook.com
@@ -896,9 +896,7 @@ TARGET ROLES IN NZ:
 - Power Platform Developer (primary)
 - Microsoft Fabric Developer
 - Power BI Developer
-- Power Platform Developer (primary)
-- Microsoft Fabric Developer
-- Power BI Developer
+- Data Engineer
 - Business/Data Analyst
 
 TARGET ORGANISATIONS: Auckland Transport, KiwiRail, Watercare, Auckland Council, Waka Kotahi, Magnetism, Fusion5
@@ -986,11 +984,9 @@ async function sendMessage() {
   showTyping();
 
   try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
+    const response = await fetch('https://portfolio-agent.hardy9za.workers.dev', {
       method: 'POST',
-      'x-api-key': '',
-'anthropic-version': '2023-06-01',
-'anthropic-dangerous-direct-browser-access': 'true'
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         model: 'claude-haiku-4-5-20251001',
         max_tokens: 1000,
