@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Harjaspreet Singh — Analytics & Automation Engineer</title>
+<title>Harjaspreet Singh — Power Platform & Fabric Developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
@@ -55,12 +55,12 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',-apple-system,sa
 .hero-eyebrow-dot{width:22px;height:22px;background:rgba(16,124,16,0.14);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px}
 .hero-title{font-family:'Source Serif 4',serif;font-size:clamp(44px,6vw,72px);font-weight:400;line-height:1;letter-spacing:-.025em;color:var(--ink);margin-bottom:8px}
 .hero-title em{font-style:italic;font-weight:300;color:var(--ms-blue)}
-.hero-subtitle{font-family:'Source Serif 4',serif;font-size:clamp(20px,2.5vw,30px);font-weight:300;font-style:italic;line-height:1.25;color:var(--text-2);margin-bottom:32px}
+.hero-subtitle{font-family:'Source Serif 4',serif;font-size:clamp(22px,3vw,36px);font-weight:300;font-style:italic;line-height:1.15;color:var(--text-2);margin-bottom:32px}
 .hero-meta{font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--text-3);margin-bottom:24px}
 .hero-meta span{color:var(--ms-blue);font-weight:600}
-.hero-description{font-size:17px;line-height:1.65;color:var(--text);margin-bottom:16px}
+.hero-description{font-size:18px;line-height:1.6;color:var(--text);margin-bottom:36px}
 .hero-description strong{color:var(--ink);font-weight:600}
-.hero-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.hero-cta-row{display:flex;gap:12px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 24px;border-radius:4px;font-size:14px;font-weight:500;text-decoration:none;transition:all .2s}
 .btn-primary{background:var(--ink);color:#fff}.btn-primary:hover{background:var(--ms-blue)}
 .btn-secondary{background:transparent;color:var(--ink);border:1px solid var(--ink)}.btn-secondary:hover{background:var(--ink);color:#fff}
@@ -93,12 +93,13 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',-apple-system,sa
 .achievement-desc strong{color:var(--ink);font-weight:600}
 .skills-section{background:var(--bg-warm)}
 .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
-.skill-card{background:var(--bg-warm);padding:28px;transition:background .2s;min-height:110px;display:flex;flex-direction:column;justify-content:center}
-.skill-card:hover{background:var(--bg-soft)}
-.skill-card-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.skill-card-icon{font-size:20px}
-.skill-card-name{font-family:'Source Serif 4',serif;font-size:17px;font-weight:500;color:var(--ink)}
-.skill-card-level{margin-top:8px;font-size:12px;color:var(--ms-blue);font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+.skill-card{background:var(--bg-warm);padding:22px;transition:background .2s}.skill-card:hover{background:var(--bg-soft)}
+.skill-card-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.skill-card-icon{font-size:18px}
+.skill-card-name{font-family:'Source Serif 4',serif;font-size:16px;font-weight:500;color:var(--ink)}
+.skill-card-level{font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--ms-blue);margin-bottom:10px}
+.skill-bar{height:4px;background:var(--border);border-radius:2px;overflow:hidden}
+.skill-fill{height:100%;background:var(--ms-blue);border-radius:2px}
 .tools-section{margin-top:32px;padding:28px;background:var(--bg-soft);border:1px solid var(--border);border-radius:4px}
 .tools-label{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3);margin-bottom:14px}
 .tools-list{display:flex;flex-wrap:wrap;gap:7px}
@@ -145,8 +146,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',-apple-system,sa
 .certs{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
 .cert{padding:9px 16px;background:var(--bg-soft);border:1px solid var(--border);border-radius:100px;font-size:13px;font-weight:500;color:var(--text);transition:all .2s}
 .cert:hover{border-color:var(--ms-blue);color:var(--ms-blue)}
-/* ARCHITECTURE SECTION */
-.arch-section{background:var(--bg-warm)}
+
 /* ANALYTICS */
 .analytics-section{padding:80px 80px;background:var(--ink);color:#fff}
 .analytics-eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#7eb3eb;margin-bottom:16px}
@@ -164,6 +164,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',-apple-system,sa
 .analytics-tab{padding:8px 18px;border-radius:6px;font-size:13px;font-weight:500;cursor:pointer;border:1px solid rgba(255,255,255,0.15);background:transparent;color:rgba(255,255,255,0.6);transition:all .2s}
 .analytics-tab.active{background:rgba(255,255,255,0.1);color:#fff;border-color:rgba(255,255,255,0.3)}
 .analytics-panel{display:none}.analytics-panel.active{display:block}
+
 footer{background:var(--bg-warm);padding:80px 80px 56px;border-top:1px solid var(--border)}
 .footer-title{font-family:'Source Serif 4',serif;font-size:clamp(40px,5.5vw,64px);font-weight:400;line-height:1;color:var(--ink);margin-bottom:20px}
 .footer-title em{font-style:italic;font-weight:300;color:var(--ms-blue)}
@@ -172,6 +173,7 @@ footer{background:var(--bg-warm);padding:80px 80px 56px;border-top:1px solid var
 .footer-link{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;background:var(--bg-soft);border:1px solid var(--border);border-radius:100px;font-size:14px;font-weight:500;color:var(--ink);text-decoration:none;transition:all .2s}
 .footer-link:hover{background:var(--ink);border-color:var(--ink);color:#fff}
 .footer-meta{padding-top:28px;border-top:1px solid var(--border);font-size:12px;color:var(--text-3);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
 /* CHATBOT */
 #chat-bubble{position:fixed;bottom:28px;right:28px;z-index:9999}
 #chat-toggle{width:60px;height:60px;border-radius:50%;background:var(--ink);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(10,22,40,0.35);transition:all .3s;position:relative}
@@ -218,13 +220,15 @@ footer{background:var(--bg-warm);padding:80px 80px 56px;border-top:1px solid var
 #chat-footer-note{padding:8px 16px;background:#fff;font-size:11px;color:var(--text-3);text-align:center;border-top:1px solid var(--border);display:flex;flex-direction:column;align-items:center;gap:6px}
 .chat-dash-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;background:var(--ms-blue);color:#fff;border-radius:4px;text-decoration:none;font-size:11px;font-weight:500;transition:background .2s}
 .chat-dash-btn:hover{background:#004f9c}
+
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 .hero>*{animation:fadeUp .8s ease both}
 .hero>*:nth-child(2){animation-delay:.08s}.hero>*:nth-child(3){animation-delay:.16s}
 .hero>*:nth-child(4){animation-delay:.24s}.hero>*:nth-child(5){animation-delay:.32s}
-.hero>*:nth-child(6){animation-delay:.40s}.hero>*:nth-child(7){animation-delay:.48s}
+.hero>*:nth-child(6){animation-delay:.40s}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 .sidebar>*{animation:fadeIn .8s ease both}
+
 @media(max-width:1100px){.app{grid-template-columns:320px 1fr}.sidebar{padding:40px 28px}.photo-frame{width:160px;height:160px}.photo-placeholder{font-size:56px}.hero,.section,footer,.stats-band,.analytics-section{padding-left:56px;padding-right:56px}}
 @media(max-width:900px){.app{grid-template-columns:1fr}.sidebar{position:relative;height:auto;padding:40px 24px 32px}.photo-frame{width:140px;height:140px;margin-bottom:20px}.photo-placeholder{font-size:48px}.sidebar-name{font-size:26px}.sidebar-nav{display:none}.hero,.section,footer,.stats-band,.analytics-section{padding-left:28px;padding-right:28px}.hero{padding-top:56px;padding-bottom:48px}.section{padding-top:64px;padding-bottom:64px}.stats-band,.analytics-section{padding-top:56px;padding-bottom:56px}footer{padding-top:64px;padding-bottom:40px}.achievements-grid{grid-template-columns:1fr}.achievement,.achievement:nth-child(2n){border-right:none;padding-left:0;padding-right:0}.skills-grid{grid-template-columns:repeat(2,1fr)}.project,.exp-row{grid-template-columns:1fr;gap:16px}.project{padding:36px 0}.project-id{font-size:36px}.exp-row{padding:24px 0}.edu-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:1fr}.stat-block,.stat-block:nth-child(2n){border-right:none;padding-left:0;padding-right:0;border-bottom:1px solid rgba(255,255,255,0.12)}.stat-block:last-child{border-bottom:none}.stat-num{font-size:44px}#chat-window{width:calc(100vw - 32px);right:16px}}
 @media(max-width:540px){.skills-grid{grid-template-columns:1fr}.project-metrics{grid-template-columns:repeat(2,1fr)}.project-metric{border-right:none;padding-right:0}}
@@ -242,11 +246,11 @@ footer{background:var(--bg-warm);padding:80px 80px 56px;border-top:1px solid var
     </div>
   </div>
   <h1 class="sidebar-name">Harjaspreet Singh</h1>
-  <div class="sidebar-tagline">Business Intelligence & Reporting Analyst</div>
-  <div class="sidebar-subtagline">Microsoft Fabric &amp; Power Platform Specialist</div>
+  <div class="sidebar-tagline">Power Platform & Fabric Developer</div>
+  <div class="sidebar-subtagline">Power BI · Power Apps · SQL · Azure AI · Copilot Studio</div>
   <div class="availability-badge">
     <div class="pulse-dot"></div>
-    <div class="availability-badge-text"><strong>Based in Auckland · Available for new opportunities</strong>  </div>
+    <div class="availability-badge-text"><strong>Based in Auckland</strong> · Available for new opportunities</div>
   </div>
   <div class="sidebar-divider"></div>
   <div class="sidebar-contact">
@@ -262,10 +266,9 @@ footer{background:var(--bg-warm);padding:80px 80px 56px;border-top:1px solid var
     <a href="#achievements"><span>Achievements</span><span class="num">02</span></a>
     <a href="#skills"><span>Skills</span><span class="num">03</span></a>
     <a href="#projects"><span>Projects</span><span class="num">04</span></a>
-    <a href="#architecture"><span>Architecture</span><span class="num">05</span></a>
-    <a href="#experience"><span>Experience</span><span class="num">06</span></a>
-    <a href="#education"><span>Education</span><span class="num">07</span></a>
-    <a href="#analytics"><span>Live Analytics</span><span class="num">08</span></a>
+    <a href="#experience"><span>Experience</span><span class="num">05</span></a>
+    <a href="#education"><span>Education</span><span class="num">06</span></a>
+    <a href="#analytics"><span>Live Analytics</span><span class="num">07</span></a>
   </nav>
 </aside>
 
@@ -274,15 +277,13 @@ footer{background:var(--bg-warm);padding:80px 80px 56px;border-top:1px solid var
   <!-- HERO -->
   <section class="hero" id="about">
     <div class="hero-eyebrow"><div class="hero-eyebrow-dot">🇳🇿</div>Available now · Auckland, New Zealand</div>
-    <h1 class="hero-title">Business Intelligence & Reporting Analyst</em></h1>
-    <h2 class="hero-subtitle">Building operational analytics platforms, semantic models, and automation systems using Microsoft Fabric and Power Platform.</h2>
-    <div class="hero-meta">Microsoft Fabric · Power BI · Power Platform · Operational Analytics · <span>15+ Years</span></div>
-    <p class="hero-description">Experienced in designing enterprise reporting systems, semantic models, workflow automation, and operational analytics across telecom, retail, ecommerce, and contact centre environments.</p>
-    <p class="hero-description">Delivered automation solutions supporting <strong>4,500+ agents</strong>, reduced manual reporting effort by <strong>80%</strong>, and built centralised KPI reporting systems integrating <strong>50+ operational data sources</strong>.</p>
+    <h1 class="hero-title">Turning <em>data</em> into</h1>
+    <h2 class="hero-subtitle">business applications, enterprise analytics & intelligent automation.</h2>
+    <div class="hero-meta">Power Platform & Fabric Developer · <span>Enterprise Analytics & Automation</span></div>
+    <p class="hero-description">I turn raw data into <strong>automated intelligence</strong>. Built WFM systems for <strong>4,500+ agents</strong>, processed <strong>900 GB of trends in 1.5 hours</strong>, architected AI agents on Microsoft Fabric, automated PDF invoice processing pipelines, and shipped Power BI semantic models that became the single source of truth for ops leadership.</p>
     <div class="hero-cta-row">
-      <a href="#projects" class="btn btn-primary">View Projects <span class="arrow">→</span></a>
+      <a href="#projects" class="btn btn-primary">View projects <span class="arrow">→</span></a>
       <a href="https://www.linkedin.com/in/harjaspreetsingh/" target="_blank" class="btn btn-secondary">LinkedIn <span class="arrow">↗</span></a>
-      <a href="https://github.com/Harjassohi" target="_blank" class="btn btn-secondary">GitHub <span class="arrow">↗</span></a>
     </div>
   </section>
 
@@ -295,7 +296,7 @@ footer{background:var(--bg-warm);padding:80px 80px 56px;border-top:1px solid var
       <div class="stat-block"><div class="stat-num">4,500<em>+</em></div><div class="stat-label">Agents tracked in automated WFM reporting across 22 telecom circles</div></div>
       <div class="stat-block"><div class="stat-num">900<em>GB</em></div><div class="stat-label">Six-month trend data published in just 1.5 hours via Power Pivot</div></div>
       <div class="stat-block"><div class="stat-num">80<em>%</em></div><div class="stat-label">Manual reporting workload eliminated through automation</div></div>
-      <div class="stat-block"><div class="stat-num">50<em>+</em></div><div class="stat-label">Operational data sources integrated into centralised KPI reporting systems</div></div>
+      <div class="stat-block"><div class="stat-num">15<em>+</em></div><div class="stat-label">Years across WFM leadership, analytics, and intelligent automation</div></div>
     </div>
   </div>
 
@@ -304,16 +305,16 @@ footer{background:var(--bg-warm);padding:80px 80px 56px;border-top:1px solid var
     <div class="section-header">
       <div class="section-eyebrow">Career Highlights</div>
       <h2 class="section-title">Selected <em>achievements.</em></h2>
-      <p class="section-subtitle">Real outcomes across operational analytics, semantic models, automation, and Microsoft Fabric.</p>
+      <p class="section-subtitle">Real outcomes across Microsoft Fabric, Power BI, Power Apps, and end-to-end automation.</p>
     </div>
     <div class="achievements-grid">
-      <div class="achievement" style="--ic-bg:rgba(0,103,192,0.08);--ic-c:#0067c0;--ic-bd:rgba(0,103,192,0.2)"><div class="achievement-icon">⚡</div><h3 class="achievement-title">Microsoft Fabric pipelines</h3><p class="achievement-desc">Architected end-to-end <strong>Lakehouse → Dataflow Gen2 → SQL Views → Semantic Model → Power BI</strong> pipelines. Published NZ economic indicator analysis — RBNZ CPI, Labour, Housing, MBIE Fuel data.</p></div>
-      <div class="achievement" style="--ic-bg:rgba(95,61,196,0.08);--ic-c:#5f3dc4;--ic-bd:rgba(95,61,196,0.2)"><div class="achievement-icon">🤖</div><h3 class="achievement-title">AI integration on Fabric Lakehouse</h3><p class="achievement-desc">Deployed a <strong>Copilot Studio AI assistant</strong> grounded on Fabric Lakehouse — surfaced in Teams and Power Pages so non-technical users access answers without raising analyst tickets.</p></div>
-      <div class="achievement" style="--ic-bg:rgba(0,130,114,0.08);--ic-c:#008272;--ic-bd:rgba(0,130,114,0.2)"><div class="achievement-icon">📊</div><h3 class="achievement-title">Enterprise semantic models</h3><p class="achievement-desc">Built Power BI semantic models that became the <strong>single source of truth</strong> for ops leadership at Reliance Jio — SLA monitoring, performance tracking, and standardised KPIs across 22 circles.</p></div>
-      <div class="achievement" style="--ic-bg:rgba(216,59,1,0.08);--ic-c:#d83b01;--ic-bd:rgba(216,59,1,0.2)"><div class="achievement-icon">⬡</div><h3 class="achievement-title">Power Apps with Dataverse writeback</h3><p class="achievement-desc">Built Power Apps with <strong>direct writeback to Microsoft Fabric</strong> via Dataverse — Field Service Tracker, stock management, and order tracking workflows reducing manual workload across teams.</p></div>
-      <div class="achievement" style="--ic-bg:rgba(16,124,16,0.08);--ic-c:#107c10;--ic-bd:rgba(16,124,16,0.2)"><div class="achievement-icon">🔄</div><h3 class="achievement-title">PDF invoice automation</h3><p class="achievement-desc">Built <strong>Power Automate Desktop + VBScript pipeline</strong> looping through emails and PDF attachments — extracts date, order number, name, address, item details to Excel. Zero manual entry, zero licensing cost.</p></div>
-      <div class="achievement" style="--ic-bg:rgba(181,137,0,0.08);--ic-c:#b58900;--ic-bd:rgba(181,137,0,0.2)"><div class="achievement-icon">📧</div><h3 class="achievement-title">Real-time portfolio analytics</h3><p class="achievement-desc">Built a <strong>Claude API → Cloudflare Worker → Azure Function → Fabric Eventhouse → Power BI</strong> pipeline — logging every recruiter conversation in real time, publicly embedded on portfolio.</p></div>
-      <div class="achievement" style="--ic-bg:rgba(0,103,192,0.08);--ic-c:#0067c0;--ic-bd:rgba(0,103,192,0.2)"><div class="achievement-icon">📈</div><h3 class="achievement-title">Power Pivot at enterprise scale</h3><p class="achievement-desc">Power Pivot model processing <strong>900 GB of 6-month trends in 1.5 hours</strong> — faster than Tableau, refreshed daily from <strong>50+ operational data sources</strong> across telecom, fibre, and financial services.</p></div>
+      <div class="achievement" style="--ic-bg:rgba(0,103,192,0.08);--ic-c:#0067c0;--ic-bd:rgba(0,103,192,0.2)"><div class="achievement-icon">⚡</div><h3 class="achievement-title">Microsoft Fabric pipelines</h3><p class="achievement-desc">Architected end-to-end <strong>Lakehouse → Dataflow Gen2 → SQL Views → Semantic Model → Power BI</strong> pipelines. Published NZ economic indicator analysis on LinkedIn — RBNZ M1 CPI, M9 Labour, M10 Housing, MBIE Fuel data.</p></div>
+      <div class="achievement" style="--ic-bg:rgba(95,61,196,0.08);--ic-c:#5f3dc4;--ic-bd:rgba(95,61,196,0.2)"><div class="achievement-icon">🤖</div><h3 class="achievement-title">AI agent on Fabric Lakehouse</h3><p class="achievement-desc">Deployed a <strong>Copilot Studio AI assistant</strong> grounded on Fabric Lakehouse data — surfaced inside Microsoft Teams and Power Pages so non-technical users get answers without raising analyst tickets.</p></div>
+      <div class="achievement" style="--ic-bg:rgba(0,130,114,0.08);--ic-c:#008272;--ic-bd:rgba(0,130,114,0.2)"><div class="achievement-icon">📊</div><h3 class="achievement-title">Power BI at enterprise scale</h3><p class="achievement-desc">Built Power BI semantic models that became the <strong>single source of truth</strong> for ops leadership at Reliance Jio. SLA monitoring, performance tracking, planned vs actual — standardised KPIs across 22 circles.</p></div>
+      <div class="achievement" style="--ic-bg:rgba(216,59,1,0.08);--ic-c:#d83b01;--ic-bd:rgba(216,59,1,0.2)"><div class="achievement-icon">⬡</div><h3 class="achievement-title">Power Apps with Dataverse writeback</h3><p class="achievement-desc">Built Power Apps with <strong>direct writeback to Microsoft Fabric</strong> via Dataverse — Field Service Tracker, stock management, order tracking workflows reducing manual workload across teams.</p></div>
+      <div class="achievement" style="--ic-bg:rgba(16,124,16,0.08);--ic-c:#107c10;--ic-bd:rgba(16,124,16,0.2)"><div class="achievement-icon">🔄</div><h3 class="achievement-title">PDF invoice automation</h3><p class="achievement-desc">Built <strong>Power Automate Desktop + VBScript pipeline</strong> that loops through emails and PDF attachments — extracts date, order number, name, address, item details directly into Excel. Zero manual entry, zero licensing cost.</p></div>
+      <div class="achievement" style="--ic-bg:rgba(181,137,0,0.08);--ic-c:#b58900;--ic-bd:rgba(181,137,0,0.2)"><div class="achievement-icon">📧</div><h3 class="achievement-title">Stock-out alert system</h3><p class="achievement-desc">Automated <strong>low-stock alerting</strong> using Power Automate + Excel/VBA — triggers email notifications and supplier re-orders to reduce stock-outs on fast-moving SKUs across NZ retail.</p></div>
+      <div class="achievement" style="--ic-bg:rgba(0,103,192,0.08);--ic-c:#0067c0;--ic-bd:rgba(0,103,192,0.2)"><div class="achievement-icon">📈</div><h3 class="achievement-title">Power Pivot — faster than Tableau</h3><p class="achievement-desc">Power Pivot model processing <strong>900 GB of 6-month trends in 1.5 hours</strong> — quicker views than Tableau, more customisable, refreshed daily from <strong>50+ data sources</strong>.</p></div>
       <div class="achievement" style="--ic-bg:rgba(95,61,196,0.08);--ic-c:#5f3dc4;--ic-bd:rgba(95,61,196,0.2)"><div class="achievement-icon">⏱</div><h3 class="achievement-title">Reduced manual effort by 80%</h3><p class="achievement-desc">Eliminated manual reporting workload for the entire WFM team using SQL, Tableau, MS Access, Excel, VBA. <strong>10 GB of trends refreshed, visualised &amp; emailed in just 10 minutes.</strong></p></div>
     </div>
   </section>
@@ -323,22 +324,26 @@ footer{background:var(--bg-warm);padding:80px 80px 56px;border-top:1px solid var
     <div class="section-header">
       <div class="section-eyebrow">Technical Stack</div>
       <h2 class="section-title">Skills &amp; <em>expertise.</em></h2>
-      <p class="section-subtitle">Operational analytics, semantic models, and automation — Microsoft ecosystem deep.</p>
+      <p class="section-subtitle">Microsoft ecosystem deep — from Power Pivot to Fabric, VBA to Azure AI.</p>
     </div>
     <div class="skills-grid">
-      <div class="skill-card"><div class="skill-card-head"><div class="skill-card-icon">📊</div><div class="skill-card-name">Power BI &amp; Semantic Models</div></div><div class="skill-card-level">Expert</div></div>
-      <div class="skill-card"><div class="skill-card-head"><div class="skill-card-icon">⚡</div><div class="skill-card-name">Microsoft Fabric</div></div><div class="skill-card-level">Advanced</div></div>
-      <div class="skill-card"><div class="skill-card-head"><div class="skill-card-icon">🔄</div><div class="skill-card-name">Power Platform Automation</div></div><div class="skill-card-level">Advanced</div></div>
-      <div class="skill-card"><div class="skill-card-head"><div class="skill-card-icon">🗄️</div><div class="skill-card-name">SQL, Power Query &amp; Data Modelling</div></div><div class="skill-card-level">Expert</div></div>
-      <div class="skill-card"><div class="skill-card-head"><div class="skill-card-icon">📡</div><div class="skill-card-name">Operational Analytics &amp; Monitoring</div></div><div class="skill-card-level">Expert</div></div>
-      <div class="skill-card"><div class="skill-card-head"><div class="skill-card-icon">🤖</div><div class="skill-card-name">AI Integration &amp; Automation</div></div><div class="skill-card-level">Advanced</div></div>
-      <div class="skill-card"><div class="skill-card-head"><div class="skill-card-icon">💻</div><div class="skill-card-name">VBA, VBScript &amp; Excel</div></div><div class="skill-card-level">Expert</div></div>
-      <div class="skill-card"><div class="skill-card-head"><div class="skill-card-icon">📞</div><div class="skill-card-name">WFM &amp; Contact Centre Analytics</div></div><div class="skill-card-level">Expert · 15+ Years</div></div>
+      <div class="skill-card"><div class="skill-card-head"><div class="skill-card-icon">📊</div><div class="skill-card-name">Power BI</div></div><div class="skill-card-level">Expert</div><div class="skill-bar"><div class="skill-fill" style="width:96%"></div></div></div>
+      <div class="skill-card"><div class="skill-card-head"><div class="skill-card-icon">📈</div><div class="skill-card-name">Power Pivot + Excel</div></div><div class="skill-card-level">Expert · Full Knowledge</div><div class="skill-bar"><div class="skill-fill" style="width:98%"></div></div></div>
+      <div class="skill-card"><div class="skill-card-head"><div class="skill-card-icon">⚡</div><div class="skill-card-name">Microsoft Fabric</div></div><div class="skill-card-level">Advanced</div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+      <div class="skill-card"><div class="skill-card-head"><div class="skill-card-icon">💻</div><div class="skill-card-name">VBA Macros</div></div><div class="skill-card-level">Expert</div><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+      <div class="skill-card"><div class="skill-card-head"><div class="skill-card-icon">🗄️</div><div class="skill-card-name">MS Access + SQL</div></div><div class="skill-card-level">Expert</div><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
+      <div class="skill-card"><div class="skill-card-head"><div class="skill-card-icon">📞</div><div class="skill-card-name">WFM Contact Centre</div></div><div class="skill-card-level">Expert · 15+ Years</div><div class="skill-bar"><div class="skill-fill" style="width:98%"></div></div></div>
+      <div class="skill-card"><div class="skill-card-head"><div class="skill-card-icon">🤖</div><div class="skill-card-name">Azure AI Services</div></div><div class="skill-card-level">Advanced</div><div class="skill-bar"><div class="skill-fill" style="width:84%"></div></div></div>
+      <div class="skill-card"><div class="skill-card-head"><div class="skill-card-icon">⬡</div><div class="skill-card-name">Power Apps + Dataverse</div></div><div class="skill-card-level">Advanced</div><div class="skill-bar"><div class="skill-fill" style="width:87%"></div></div></div>
+      <div class="skill-card"><div class="skill-card-head"><div class="skill-card-icon">🔄</div><div class="skill-card-name">Power Automate</div></div><div class="skill-card-level">Advanced</div><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+      <div class="skill-card"><div class="skill-card-head"><div class="skill-card-icon">🎯</div><div class="skill-card-name">AI Agent Creation</div></div><div class="skill-card-level">Advanced</div><div class="skill-bar"><div class="skill-fill" style="width:83%"></div></div></div>
+      <div class="skill-card"><div class="skill-card-head"><div class="skill-card-icon">📡</div><div class="skill-card-name">Real-Time Monitoring</div></div><div class="skill-card-level">Expert</div><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+      <div class="skill-card"><div class="skill-card-head"><div class="skill-card-icon">🏪</div><div class="skill-card-name">Retail &amp; Ecommerce</div></div><div class="skill-card-level">Advanced</div><div class="skill-bar"><div class="skill-fill" style="width:84%"></div></div></div>
     </div>
     <div class="tools-section">
       <div class="tools-label">Tools &amp; Technologies</div>
       <div class="tools-list">
-        <span class="tool-chip">Power BI</span><span class="tool-chip">Semantic Models</span><span class="tool-chip">Power Pivot</span><span class="tool-chip">Advanced Excel</span><span class="tool-chip">VBA</span><span class="tool-chip">VBScript</span><span class="tool-chip">SQL</span><span class="tool-chip">KQL</span><span class="tool-chip">MS Access</span><span class="tool-chip">Microsoft Fabric</span><span class="tool-chip">Lakehouse</span><span class="tool-chip">Eventhouse</span><span class="tool-chip">Dataflow Gen2</span><span class="tool-chip">Dataverse</span><span class="tool-chip">Power Apps</span><span class="tool-chip">Power Automate</span><span class="tool-chip">Power Automate Desktop</span><span class="tool-chip">Copilot Studio</span><span class="tool-chip">Azure Functions</span><span class="tool-chip">Cloudflare Workers</span><span class="tool-chip">Power Pages</span><span class="tool-chip">Tableau</span><span class="tool-chip">SharePoint</span><span class="tool-chip">Teams</span><span class="tool-chip">Six Sigma</span>
+        <span class="tool-chip">Power BI</span><span class="tool-chip">Power Pivot</span><span class="tool-chip">Advanced Excel</span><span class="tool-chip">VBA</span><span class="tool-chip">VBScript</span><span class="tool-chip">MS Access</span><span class="tool-chip">SQL</span><span class="tool-chip">KQL</span><span class="tool-chip">Microsoft Fabric</span><span class="tool-chip">Lakehouse</span><span class="tool-chip">Eventhouse</span><span class="tool-chip">Dataflow Gen2</span><span class="tool-chip">Dataverse</span><span class="tool-chip">Power Apps</span><span class="tool-chip">Power Automate</span><span class="tool-chip">Power Automate Desktop</span><span class="tool-chip">Copilot Studio</span><span class="tool-chip">Azure Functions</span><span class="tool-chip">Azure OpenAI</span><span class="tool-chip">Azure Speech</span><span class="tool-chip">Cloudflare Workers</span><span class="tool-chip">Power Pages</span><span class="tool-chip">Tableau</span><span class="tool-chip">SharePoint</span><span class="tool-chip">Teams</span><span class="tool-chip">Six Sigma</span>
       </div>
     </div>
   </section>
@@ -348,7 +353,7 @@ footer{background:var(--bg-warm);padding:80px 80px 56px;border-top:1px solid var
     <div class="section-header">
       <div class="section-eyebrow">Featured Work</div>
       <h2 class="section-title">Projects that <em>moved the needle.</em></h2>
-      <p class="section-subtitle">Enterprise-scale analytics platforms, automation pipelines, and published research.</p>
+      <p class="section-subtitle">Enterprise-scale builds, automation pipelines, and published research.</p>
     </div>
     <div class="projects-stack">
       <div class="project">
@@ -358,8 +363,8 @@ footer{background:var(--bg-warm);padding:80px 80px 56px;border-top:1px solid var
           <div class="project-org">Reliance Jio · Telecom / Fiber / Financial Services · Mumbai</div>
           <div class="project-stack-list"><span class="stack-pill">Power Pivot</span><span class="stack-pill">MS Access</span><span class="stack-pill">VBA Macros</span><span class="stack-pill">Excel</span><span class="stack-pill">Email Automation</span></div>
           <div class="project-body">
-            <p>Designed and built an <strong>enterprise operational analytics platform</strong> for Jio's contact centre across Mobility, Fiber, and Financial Services. Integrated half-hourly data from <strong>50+ operational data sources</strong> — calls, tagging, inbound, outbound, chat, emails, and internal and external feeds.</p>
-            <p>Fully automated model refreshes, visualises, and emails <strong>10 GB of trends in just 10 minutes</strong>. Monthly reports publish <strong>900 GB of six months' trend data in 1.5 hours</strong> — faster than Tableau, built entirely on free Microsoft tools with zero licensing cost.</p>
+            <p>Built a <strong>Power Pivot solution</strong> for Jio's contact centre across Mobility, Fiber, and Financial Services. Integrated half-hourly data from <strong>50+ data sources</strong> — calls, tagging, inbound, outbound, chat, emails, and both internal and external feeds.</p>
+            <p>Once fully automated, the model refreshes, visualises, and emails <strong>10 GB of trends in just 10 minutes</strong>. Monthly reports publish <strong>900 GB of six months' trend data in 1.5 hours</strong> — quicker than Tableau, built entirely on free Microsoft tools.</p>
           </div>
           <div class="project-metrics">
             <div class="project-metric"><div class="project-metric-num">4,500<em>+</em></div><div class="project-metric-label">Agents</div></div>
@@ -376,27 +381,27 @@ footer{background:var(--bg-warm);padding:80px 80px 56px;border-top:1px solid var
           <h3 class="project-title">PDF Invoice → Excel Automation Pipeline</h3>
           <div class="project-org">Power Automate Desktop · VBA · VBScript · RPA</div>
           <div class="project-stack-list"><span class="stack-pill">Power Automate Desktop</span><span class="stack-pill">VBScript</span><span class="stack-pill">VBA</span><span class="stack-pill">Email Parsing</span></div>
-          <div class="project-body"><p>Fully automated <strong>PDF invoice processing pipeline</strong> at zero licensing cost. Loops through each email and each attachment — extracting date, order number, customer name, address, and item details directly into Excel. Zero manual data entry, ready for reconciliation and management reporting.</p></div>
+          <div class="project-body"><p>Fully automated <strong>PDF invoice processing pipeline</strong> at zero licensing cost. Loops through each email and each attachment — extracting date, order number, customer name, address, and item details directly into Excel. Zero manual data entry.</p></div>
         </div>
       </div>
       <div class="project">
         <div><div class="project-id">03</div><div class="project-period">Published on LinkedIn</div><span class="project-tag project-tag-live">Live</span></div>
         <div>
           <h3 class="project-title">NZ Economy — Housing, Labour, OCR &amp; Inflation</h3>
-          <div class="project-org">Fabric Lakehouse → SQL Views → Semantic Model → Power BI · RBNZ + MBIE</div>
-          <div class="project-stack-list"><span class="stack-pill">Microsoft Fabric</span><span class="stack-pill">Lakehouse</span><span class="stack-pill">SQL Views</span><span class="stack-pill">Semantic Model</span><span class="stack-pill">Power BI</span></div>
-          <div class="project-body"><p>Operational analytics report published on LinkedIn — built on a complete <strong>Fabric Lakehouse → SQL Views → Semantic Model → Power BI</strong> pipeline using RBNZ and MBIE public data. Analysed 20+ years of fuel price history, OCR risk zone, and NZ labour market structural shifts.</p></div>
+          <div class="project-org">Fabric Lakehouse → SQL Views → Power BI · RBNZ + MBIE</div>
+          <div class="project-stack-list"><span class="stack-pill">Microsoft Fabric</span><span class="stack-pill">Lakehouse</span><span class="stack-pill">SQL Views</span><span class="stack-pill">Power BI</span><span class="stack-pill">RBNZ</span><span class="stack-pill">MBIE Fuel</span></div>
+          <div class="project-body"><p>Power BI analysis published on LinkedIn — built on a complete <strong>Fabric Lakehouse → SQL Views → Semantic Model → Power BI</strong> pipeline using RBNZ and MBIE public data. Analysed 20+ years of fuel price history, OCR risk zone, and NZ labour market shifts.</p></div>
         </div>
       </div>
       <div class="project">
         <div><div class="project-id">04</div><div class="project-period">2024 – Present</div><span class="project-tag project-tag-live">Live</span></div>
         <div>
-          <h3 class="project-title">Portfolio AI Assistant with Real-Time Analytics Pipeline</h3>
-          <div class="project-org">Cloudflare Workers · Claude API · Azure Functions · Fabric Eventhouse · Power BI</div>
+          <h3 class="project-title">Portfolio AI Assistant with Real-Time Analytics</h3>
+          <div class="project-org">Cloudflare Workers · Claude API · Azure Functions · Microsoft Fabric Eventhouse · Power BI</div>
           <div class="project-stack-list"><span class="stack-pill">Cloudflare Workers</span><span class="stack-pill">Claude API</span><span class="stack-pill">Azure Functions</span><span class="stack-pill">Fabric Eventhouse</span><span class="stack-pill">KQL</span><span class="stack-pill">Power BI</span></div>
           <div class="project-body">
-            <p>End-to-end <strong>real-time analytics pipeline</strong> — every recruiter conversation logged automatically via Cloudflare Worker → Azure Function → Fabric Eventhouse → Power BI. Demonstrates operational analytics architecture using serverless compute, real-time KQL databases, and public Power BI embedding.</p>
-            <p>Pipeline visible in the Live Analytics section below — shows which questions are asked most, conversation volume over time, and device breakdown. Fabric Real-Time Dashboard refreshes within seconds. Power BI public embed requires no login.</p>
+            <p>Built an AI assistant on this portfolio powered by Claude API via a Cloudflare Worker. Every conversation is automatically logged through an <strong>Azure Function → Microsoft Fabric Eventhouse</strong> pipeline.</p>
+            <p>Visualised in both a <strong>Fabric Real-Time Dashboard</strong> (30-second refresh) and a <strong>public Power BI report</strong> — showing which questions recruiters ask most, conversation volume over time, and device analytics. See live data in the Analytics section below.</p>
           </div>
         </div>
       </div>
@@ -406,68 +411,10 @@ footer{background:var(--bg-warm);padding:80px 80px 56px;border-top:1px solid var
           <h3 class="project-title">Retail Stock-Out Alert &amp; Auto Re-Order System</h3>
           <div class="project-org">Power Automate · Excel · VBA · Ecommerce / Retail</div>
           <div class="project-stack-list"><span class="stack-pill">Power Automate</span><span class="stack-pill">Excel + VBA</span><span class="stack-pill">Email Alerts</span><span class="stack-pill">Supplier Workflow</span></div>
-          <div class="project-body"><p>Automated <strong>low-stock alerting and supplier re-ordering workflow</strong> using Power Automate + Excel/VBA — triggering email notifications to reduce stock-outs on fast-moving SKUs across NZ retail operations.</p></div>
+          <div class="project-body"><p>Automated <strong>low-stock alerting system</strong> using Power Automate + Excel/VBA — triggering email notifications and supplier re-ordering workflows to reduce stock-outs on fast-moving SKUs across NZ retail operations.</p></div>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- ARCHITECTURE -->
-  <section class="section arch-section" id="architecture">
-    <div class="section-header">
-      <div class="section-eyebrow">Architecture</div>
-      <h2 class="section-title">Enterprise data <em>architecture.</em></h2>
-      <p class="section-subtitle">End-to-end operational analytics pipelines using Microsoft Fabric, Power BI, Azure, and automation services.</p>
-    </div>
-    <div class="tools-section">
-      <div class="tools-label">Standard Analytics Pipeline</div>
-      <div class="analytics-pipeline">
-        <span class="pipeline-step">Operational Systems</span>
-        <span class="pipeline-arrow">→</span>
-        <span class="pipeline-step">Power Query / APIs</span>
-        <span class="pipeline-arrow">→</span>
-        <span class="pipeline-step">Fabric Lakehouse</span>
-        <span class="pipeline-arrow">→</span>
-        <span class="pipeline-step">SQL Views</span>
-        <span class="pipeline-arrow">→</span>
-        <span class="pipeline-step">Semantic Models</span>
-        <span class="pipeline-arrow">→</span>
-        <span class="pipeline-step">Power BI</span>
-        <span class="pipeline-arrow">→</span>
-        <span class="pipeline-step">Automation &amp; AI</span>
-      </div>
-    </div>
-    <div class="tools-section" style="margin-top:16px">
-      <div class="tools-label">Real-Time Event Pipeline</div>
-      <div class="analytics-pipeline">
-        <span class="pipeline-step">Live Events</span>
-        <span class="pipeline-arrow">→</span>
-        <span class="pipeline-step">Cloudflare Workers</span>
-        <span class="pipeline-arrow">→</span>
-        <span class="pipeline-step">Azure Functions</span>
-        <span class="pipeline-arrow">→</span>
-        <span class="pipeline-step">Fabric Eventhouse</span>
-        <span class="pipeline-arrow">→</span>
-        <span class="pipeline-step">KQL Queries</span>
-        <span class="pipeline-arrow">→</span>
-        <span class="pipeline-step">Real-Time Dashboard</span>
-      </div>
-    </div>
-    <div class="tools-section" style="margin-top:16px">
-      <div class="tools-label">Automation Pipeline</div>
-      <div class="analytics-pipeline">
-        <span class="pipeline-step">Trigger / Schedule</span>
-        <span class="pipeline-arrow">→</span>
-        <span class="pipeline-step">Power Automate</span>
-        <span class="pipeline-arrow">→</span>
-        <span class="pipeline-step">Dataverse / Excel</span>
-        <span class="pipeline-arrow">→</span>
-        <span class="pipeline-step">Processing Logic</span>
-        <span class="pipeline-arrow">→</span>
-        <span class="pipeline-step">Output / Alert</span>
-      </div>
-    </div>
-    <p class="hero-description" style="margin-top:28px;max-width:900px;font-size:16px">Specialised in designing centralised reporting ecosystems integrating operational systems, workforce analytics, automation workflows, semantic models, and real-time monitoring dashboards across telecom, retail, ecommerce, and contact centre environments.</p>
   </section>
 
   <!-- EXPERIENCE -->
@@ -475,14 +422,14 @@ footer{background:var(--bg-warm);padding:80px 80px 56px;border-top:1px solid var
     <div class="section-header">
       <div class="section-eyebrow">Career Journey</div>
       <h2 class="section-title">15+ years of <em>experience.</em></h2>
-      <p class="section-subtitle">Operational analytics and workforce management leadership across telecom, BPO, and retail.</p>
+      <p class="section-subtitle">Workforce management leadership across telecom, BPO, and analytics.</p>
     </div>
     <div class="exp-list">
-      <div class="exp-row"><div class="exp-period-text">Dec 2023 – Present</div><div><div class="exp-role">Customer Service + Independent Analytics &amp; AI Projects</div><div class="exp-company">Mobil Eden Park &amp; Green Lane · Auckland, NZ</div><div class="exp-desc">Customer service and store operations while building independent Microsoft Fabric pipelines, Copilot Studio AI agents, Power BI semantic models, Azure Functions, and real-time analytics projects for NZ portfolio.</div></div></div>
-      <div class="exp-row"><div class="exp-period-text">Oct 2020 – Dec 2023</div><div><div class="exp-role">Manager — Workforce Management &amp; Analytics</div><div class="exp-company">Reliance Jio · Mumbai, India · Telecom / Fiber / Finance</div><div class="exp-desc"><ul><li>Reduced manual reporting effort by ~80% through operational analytics automation — SQL, Tableau, MS Access, Excel, VBA.</li><li>Built centralised KPI reporting system for 4,500+ agents across 22 circles integrating 50+ data sources.</li><li>Published 900 GB of six-month trends in 1.5 hours with Power Pivot — faster and more customisable than Tableau.</li><li>Built Power BI semantic models — single source of truth for ops leadership across telecom, fibre, and financial services.</li></ul></div></div></div>
-      <div class="exp-row"><div class="exp-period-text">Oct 2017 – Sep 2020</div><div><div class="exp-role">Manager — Workforce Management</div><div class="exp-company">Teleperformance · Mohali, India · Telecom Clients</div><div class="exp-desc">Developed operational measurement strategies and reporting frameworks for telecom client accounts. Implemented quantitative process improvements across multi-site workloads.</div></div></div>
-      <div class="exp-row"><div class="exp-period-text">Mar 2015 – Jun 2017</div><div><div class="exp-role">Manager — Workforce Management</div><div class="exp-company">dr it · Chandigarh, India</div><div class="exp-desc">Supported business leaders with exploratory analysis and operational dashboards shaping decisions on growth, revenue, and profitability.</div></div></div>
-      <div class="exp-row"><div class="exp-period-text">Jan 2011 – Feb 2015</div><div><div class="exp-role">Deputy / Assistant Manager — Workforce Management</div><div class="exp-company">Teleperformance · Jaipur, India</div><div class="exp-desc">Led forecasting, planning, and staffing for a multi-client workforce. Recognised by clients for timely, accurate operational reporting.</div></div></div>
+      <div class="exp-row"><div class="exp-period-text">Dec 2023 – Present</div><div><div class="exp-role">BI Developer &amp; Data Analyst</div><div class="exp-company">Bhnz · Auckland, NZ</div><div class="exp-desc"><ul><li>Built end-to-end data pipelines in Microsoft Fabric using Lakehouse ingestion, Dataflow Gen2, SQL views, and Medallion architecture.</li><li>Designed Power BI dashboards for sales, stock, and customer behaviour with automated refresh.</li><li>Developed Power Apps + Power Automate workflows for stock management, order tracking, and supply chain operations.</li><li>Created a Copilot Studio chatbot connected to Fabric Lakehouse data, deployed to Teams and Power Pages for real-time Q&amp;A.</li><li>Built an invoice processing automation converting PDF emails into structured Excel for reconciliation and reporting.</li></ul></div></div></div>
+      <div class="exp-row"><div class="exp-period-text">Oct 2020 – Dec 2023</div><div><div class="exp-role">Manager — Workforce Management</div><div class="exp-company">Reliance Jio · Mumbai, India · Telecom / Fiber / Finance</div><div class="exp-desc"><ul><li>Reduced manual reporting effort by ~80% using SQL, Tableau, MS Access, Excel, VBA.</li><li>Automated WFM for 4,500+ agents across 22 circles — 2 lakh calls/day.</li><li>Published 900 GB of six-month trends in 1.5 hours with Power Pivot — faster than Tableau.</li><li>Built Power BI semantic models — single source of truth for ops leadership.</li></ul></div></div></div>
+      <div class="exp-row"><div class="exp-period-text">Oct 2017 – Sep 2020</div><div><div class="exp-role">Manager — Workforce Management</div><div class="exp-company">Teleperformance · Mohali, India · Telecom Clients</div><div class="exp-desc">Developed measurement strategies and operational reporting for telecom clients. Implemented quantitative process improvements across multi-site reporting workloads.</div></div></div>
+      <div class="exp-row"><div class="exp-period-text">Mar 2015 – Jun 2017</div><div><div class="exp-role">Manager — Workforce Management</div><div class="exp-company">dr it · Chandigarh, India</div><div class="exp-desc">Supported business leaders with exploratory analysis and dashboards shaping growth, revenue, and profitability decisions.</div></div></div>
+      <div class="exp-row"><div class="exp-period-text">Jan 2011 – Feb 2015</div><div><div class="exp-role">Deputy / Assistant Manager — Workforce Management</div><div class="exp-company">Teleperformance · Jaipur, India</div><div class="exp-desc">Led forecasting, planning, and staffing for a multi-client workforce. Recognised by clients for timely, accurate reporting.</div></div></div>
       <div class="exp-row"><div class="exp-period-text">Sep 2005 – Jan 2011</div><div><div class="exp-role">Team Leader · Senior Customer Care</div><div class="exp-company">Serco · Competent Synergies · Tata Business Support Services</div><div class="exp-desc">Team Leader at Serco (2009–2011), Team Leader at Competent Synergies (2008–2009), Senior Customer Care at Tata Business Support Services (2005–2008).</div></div></div>
     </div>
   </section>
@@ -509,7 +456,8 @@ footer{background:var(--bg-warm);padding:80px 80px 56px;border-top:1px solid var
   <section class="analytics-section" id="analytics">
     <div class="analytics-eyebrow">Live Analytics</div>
     <h2 class="analytics-title">AI Assistant <em>in action.</em></h2>
-    <p class="analytics-subtitle">Every question asked to the portfolio AI assistant is logged in real time — demonstrating an end-to-end operational analytics pipeline in production.</p>
+    <p class="analytics-subtitle">Every question asked to the portfolio AI assistant is logged in real time — no manual tracking, no batch jobs, no delays.</p>
+
     <div class="analytics-pipeline">
       <span class="pipeline-step">Visitor asks question</span>
       <span class="pipeline-arrow">→</span>
@@ -523,34 +471,56 @@ footer{background:var(--bg-warm);padding:80px 80px 56px;border-top:1px solid var
       <span class="pipeline-arrow">→</span>
       <span class="pipeline-step">Power BI</span>
     </div>
+
+    <!-- BUTTONS ROW -->
     <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:36px">
-      <a href="https://app.fabric.microsoft.com/links/HLhmzCOLI4?ctid=af0f7441-5ba0-4be5-bdff-247f790a9d2b&pbi_source=linkShare&experience=fabric-developer&extensionScenario=openArtifact&v-_startTime=1hours&v-_endTime=now&page=9747199d-21af-4338-a451-22c9749c535b" target="_blank" class="analytics-btn">⚡ Real-Time Dashboard ↗</a>
-      <a href="https://app.powerbi.com/view?r=eyJrIjoiY2RmYzkyNTUtN2ZjZi00YzU4LTliZTctNDYyNDM1MDdjODY5IiwidCI6ImFmMGY3NDQxLTViYTAtNGJlNS1iZGZmLTI0N2Y3OTBhOWQyYiJ9" target="_blank" class="analytics-btn-ghost">📊 Power BI Report ↗</a>
-      <a href="dashboard.png" target="_blank" class="analytics-btn-ghost">🖼 View Screenshot ↗</a>
+      <a href="https://app.fabric.microsoft.com/links/HLhmzCOLI4?ctid=af0f7441-5ba0-4be5-bdff-247f790a9d2b&pbi_source=linkShare&experience=fabric-developer&extensionScenario=openArtifact&v-_startTime=1hours&v-_endTime=now&page=9747199d-21af-4338-a451-22c9749c535b" target="_blank" class="analytics-btn">
+        ⚡ Real-Time Dashboard ↗
+      </a>
+      <a href="https://app.powerbi.com/view?r=eyJrIjoiY2RmYzkyNTUtN2ZjZi00YzU4LTliZTctNDYyNDM1MDdjODY5IiwidCI6ImFmMGY3NDQxLTViYTAtNGJlNS1iZGZmLTI0N2Y3OTBhOWQyYiJ9" target="_blank" class="analytics-btn-ghost">
+        📊 Power BI Report ↗
+      </a>
+      <a href="dashboard.png" target="_blank" class="analytics-btn-ghost">
+        🖼 View Screenshot ↗
+      </a>
     </div>
+
+    <!-- TABS: Power BI embed | Screenshot -->
     <div class="analytics-tabs">
       <button class="analytics-tab active" onclick="showAnalyticsTab('powerbi', this)">📊 Power BI (Public)</button>
       <button class="analytics-tab" onclick="showAnalyticsTab('screenshot', this)">🖼 Dashboard Screenshot</button>
     </div>
+
+    <!-- Power BI Panel -->
     <div class="analytics-panel active" id="panel-powerbi">
       <div style="border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.1)">
-        <iframe title="Chatlogs-bot" width="100%" height="520" src="https://app.powerbi.com/view?r=eyJrIjoiY2RmYzkyNTUtN2ZjZi00YzU4LTliZTctNDYyNDM1MDdjODY5IiwidCI6ImFmMGY3NDQxLTViYTAtNGJlNS1iZGZmLTI0N2Y3OTBhOWQyYiJ9" frameborder="0" allowFullScreen="true"></iframe>
+        <iframe
+          title="Chatlogs-bot"
+          width="100%"
+          height="520"
+          src="https://app.powerbi.com/view?r=eyJrIjoiY2RmYzkyNTUtN2ZjZi00YzU4LTliZTctNDYyNDM1MDdjODY5IiwidCI6ImFmMGY3NDQxLTViYTAtNGJlNS1iZGZmLTI0N2Y3OTBhOWQyYiJ9"
+          frameborder="0"
+          allowFullScreen="true">
+        </iframe>
       </div>
       <p style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:10px">Power BI refreshes every hour · No login required</p>
     </div>
+
+    <!-- Screenshot Panel -->
     <div class="analytics-panel" id="panel-screenshot">
       <div style="border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.1)">
-        <img src="dashboard.png" alt="Microsoft Fabric Real-Time Dashboard showing conversation analytics" style="width:100%;display:block;border-radius:8px"/>
+        <img src="dashboard.png" alt="Microsoft Fabric Real-Time Dashboard — SaveChatLog showing conversation analytics" style="width:100%;display:block;border-radius:8px"/>
       </div>
       <p style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:10px">Microsoft Fabric Eventhouse Real-Time Dashboard · 30-second auto-refresh · Requires Microsoft account</p>
     </div>
+
     <a href="#about" class="analytics-btn-ghost" style="margin-top:24px;display:inline-flex">Back to top ↑</a>
   </section>
 
   <!-- FOOTER -->
   <footer>
     <h2 class="footer-title">Let's build something <em>intelligent.</em></h2>
-    <p class="footer-tagline">Available for Analytics Engineering and Microsoft Fabric opportunities across New Zealand.</p>
+    <p class="footer-tagline">Open to Power Platform Developer, Microsoft Fabric Developer, Data Engineer, Data Analyst, and WFM roles in New Zealand. NZ Resident — available immediately, no sponsorship required.</p>
     <div class="footer-links">
       <a href="mailto:harjaspreetsohi@outlook.com" class="footer-link">✉ Email me</a>
       <a href="tel:+64224155125" class="footer-link">📞 +64 22 415 5125</a>
@@ -585,7 +555,7 @@ footer{background:var(--bg-warm);padding:80px 80px 56px;border-top:1px solid var
   </div>
   <div id="chat-messages"></div>
   <div class="chat-suggestions" id="chat-suggestions">
-    <button class="chat-suggestion" onclick="sendSuggestion(this)">Can you deliver end to end in Power Platform?</button>
+    <button class="chat-suggestion" onclick="sendSuggestion(this)">Can you deliver end-to-end in Power Platform?</button>
     <button class="chat-suggestion" onclick="sendSuggestion(this)">Tell me about your Fabric architecture</button>
     <button class="chat-suggestion" onclick="sendSuggestion(this)">SQL and Power BI experience?</button>
     <button class="chat-suggestion" onclick="sendSuggestion(this)">NZ work rights and availability?</button>
@@ -603,53 +573,70 @@ footer{background:var(--bg-warm);padding:80px 80px 56px;border-top:1px solid var
 </div>
 
 <script>
-const SYSTEM_PROMPT = `You are a professional portfolio AI assistant representing Harjaspreet Singh, an Analytics and Automation Engineer specialising in Microsoft Fabric and Power Platform, based in Auckland, New Zealand.
+const SYSTEM_PROMPT = `You are a professional portfolio AI assistant representing Harjaspreet Singh, a Power Platform and Microsoft Fabric Developer based in Auckland, New Zealand. You speak confidently, warmly, and specifically — like Harjaspreet himself answering recruiter questions.
 
 ABOUT HARJASPREET:
-- 15+ years experience in operational analytics, WFM, and automation engineering
+- 15+ years experience across data engineering, Power Platform, WFM, and automation
+- Current role: BI Developer & Data Analyst at Bhnz, Auckland (Dec 2023 – Present)
 - Location: Flat Bush, Auckland 2019, NZ
 - Phone: +64 22 415 5125
-- Status: Based in Auckland · Available for new opportunities
 - Email: harjaspreetsohi@outlook.com
 - LinkedIn: linkedin.com/in/harjaspreetsingh
 - GitHub: github.com/Harjassohi
-
-POSITIONING:
-Analytics and Automation Engineer — Microsoft Fabric and Power Platform Specialist
-Operational Analytics | Semantic Models | Automation | KPI Governance | Multi-source Integration
+- Work status: NZ Resident — full work rights, no sponsorship needed, available for new opportunities
 
 CORE SKILLS:
-- Microsoft Fabric: Lakehouse, Dataflow Gen2, SQL Views, Semantic Models, KQL, Eventhouse, OneLake
-- Power BI: Semantic models, DAX, Power Query, enterprise reporting, KPI governance
-- Power Platform: Power Apps, Power Automate, Copilot Studio, Power Pages, Power Automate Desktop
-- Azure: Azure Functions, Cloudflare Workers, App Registration
-- Data: SQL, VBA, VBScript, MS Access, Power Pivot, Advanced Excel, KQL
+- Microsoft Fabric: Lakehouse, Dataflow Gen2, SQL Views, Semantic Models, KQL, Eventhouse, OneLake, Medallion architecture
+- Power Platform: Power BI (Expert — DAX, semantic models, enterprise reporting), Power Apps (canvas & model-driven), Power Automate (cloud & desktop flows), Copilot Studio, Power Pages
+- Azure: Azure Functions, Azure AI Services, Azure OpenAI, Azure Speech, Cloudflare Workers, App Registration
+- Data: SQL (complex queries, transformations, automation), VBA, VBScript, MS Access, Power Pivot, Advanced Excel, KQL
 - Other: Tableau, Six Sigma Green Belt, WFM Contact Centre 15+ years
 
 KEY ACHIEVEMENTS:
-- Built centralised KPI reporting system for 4500+ agents across 22 circles integrating 50+ operational data sources
-- Processed 900 GB of six-month trends in 1.5 hours using Power Pivot
-- Reduced manual reporting effort by 80% through operational analytics automation
-- Built real-time analytics pipeline on portfolio — Claude API to Cloudflare to Azure to Fabric Eventhouse to Power BI
-- Deployed Copilot Studio AI agent on Fabric Lakehouse for self-service analytics
-- Built PDF invoice automation pipeline at zero licensing cost
-- Published NZ economic indicator analysis using Fabric Lakehouse to SQL Views to Semantic Model to Power BI
+- Built WFM automation for 4,500+ agents at Reliance Jio across 22 telecom circles — 18 automated runs per day
+- Processed 900 GB of six-month trends in 1.5 hours using Power Pivot — faster than Tableau
+- Reduced manual reporting effort by 80% using SQL, VBA, and automation
+- Built this portfolio AI assistant with real-time Fabric Eventhouse and Power BI analytics pipeline
+- Deployed Copilot Studio AI agent grounded on Fabric Lakehouse, surfaced in Teams and Power Pages
+- Built PDF invoice automation pipeline converting email attachments to structured Excel — zero licensing cost
+- Published NZ economic indicator analysis (RBNZ, StatsNZ, MBIE) using Fabric Lakehouse → SQL → Power BI
+- Built Power Apps with direct writeback to Microsoft Fabric via Dataverse
+
+PORTFOLIO PROJECTS:
+1. Automated WFM Reporting at Reliance Jio — Power Pivot, MS Access, VBA, 4,500+ agents, 22 circles
+2. PDF Invoice to Excel Automation — Power Automate Desktop, VBScript, zero licensing cost
+3. NZ Economy Analysis — Fabric Lakehouse, SQL, Power BI, StatsNZ & RBNZ data
+4. Portfolio AI Assistant — Claude API, Cloudflare Workers, Azure Functions, Fabric Eventhouse, Power BI real-time
+5. Retail Stock-Out Alert System — Power Automate, Excel, VBA, supplier re-order workflows
 
 TARGET ROLES IN NZ:
-- Microsoft Fabric Developer or Analytics Engineer
-- Power BI Developer or Data Engineer
 - Power Platform Developer
-- Business Analyst or Operational Analytics Specialist
+- Microsoft Fabric Developer
+- Power BI Developer or Data Engineer
+- Business Analyst or Data Analyst
+
+RECRUITER Q&A — USE THESE AS REFERENCE FOR COMMON QUESTIONS:
+
+Q: Can you deliver end-to-end in Power Platform?
+A: Yes — end-to-end is exactly how I work. I build the full stack: Power Apps (canvas and model-driven) for data capture and user interfaces, Power Automate for cloud and desktop workflow automation, Power BI semantic models for reporting and analytics, Copilot Studio AI agents for self-service Q&A, and Power Pages for external-facing portals. At Bhnz I built a complete stock management solution — from the Power Apps front-end through to Dataverse writeback into Fabric Lakehouse, with automated alerts via Power Automate and live dashboards in Power BI. Everything connected, nothing siloed.
+
+Q: Tell me about your Fabric architecture
+A: I work with Medallion architecture end-to-end. Bronze layer ingests raw data into OneLake via Dataflow Gen2 or pipeline connectors. Silver transforms and cleans using SQL views and notebooks. Gold exposes curated semantic models to Power BI. I've built this for NZ economic data (StatsNZ, RBNZ, MBIE), retail stock and sales pipelines at Bhnz, and my portfolio AI assistant which logs every chat query in real-time to Fabric Eventhouse then surfaces it in a live Power BI dashboard. I also use KQL for real-time querying and Azure Functions to push data into Fabric from external APIs.
+
+Q: SQL and Power BI experience?
+A: Strong on both. On the SQL side I write complex queries for data transformation, aggregation, and automation — at Reliance Jio I used SQL to eliminate 80% of manual reporting workload across 22 circles and 4,500+ agents. In Power BI I build proper semantic models with DAX measures, row-level security, and scheduled refresh — not just drag-and-drop reports. My models have been the single source of truth for ops leadership at enterprise scale. I also use Power Pivot for high-volume Excel-based models — I once processed 900 GB of trend data in 1.5 hours, faster than Tableau.
+
+Q: NZ work rights and availability?
+A: I'm an NZ Resident with full work rights — no sponsorship, no visa complications, no delays. I'm based in Flat Bush, Auckland 2019, and available for new opportunities now, whether that's full-time, contract, or a fixed-term project. I can start with minimal notice and hit the ground running on day one.
 
 INSTRUCTIONS:
-- Be confident specific and professional
-- Position as Analytics and Automation Engineer not just a tool user
-- Emphasise operational analytics semantic models KPI governance and multi-source integration
-- Always mention NZ availability and no sponsorship needed when asked
+- Be confident, specific, and professional — answer like Harjaspreet himself
+- For the four key recruiter questions above, use the reference answers as your guide (adapt naturally, don't copy word for word)
+- Always confirm NZ work rights and availability when asked about visa or work status
 - Reference real projects and real numbers when relevant
-- Keep answers concise but detailed 3 to 5 sentences ideal
-- Sound human and warm not robotic
-- If asked about contact provide email phone and LinkedIn
+- Keep answers concise but detailed — 3 to 5 sentences ideal, bullet points where helpful
+- Sound human and warm, not robotic or salesy
+- If asked for contact details, provide: email harjaspreetsohi@outlook.com, phone +64 22 415 5125, LinkedIn linkedin.com/in/harjaspreetsingh
 - Never make up information not listed above`;
 
 let chatOpen=false,isTyping=false,conversationHistory=[],greeted=false;
@@ -659,7 +646,7 @@ function toggleChat(){
   const win=document.getElementById('chat-window');
   if(chatOpen){
     win.classList.add('open');
-    if(!greeted){greeted=true;setTimeout(()=>addBotMessage("Hi! I'm Harjaspreet's portfolio assistant. I can tell you about his analytics engineering work, Microsoft Fabric projects, NZ availability, and experience. What would you like to know?"),400);}
+    if(!greeted){greeted=true;setTimeout(()=>addBotMessage("Hi! I'm Harjaspreet's portfolio assistant. I can tell you about his skills, projects, NZ availability, and experience. What would you like to know?"),400);}
     setTimeout(()=>document.getElementById('chat-input').focus(),300);
   }else{win.classList.remove('open');}
 }
@@ -722,7 +709,8 @@ async function sendMessage(){
 function sendSuggestion(btn){document.getElementById('chat-input').value=btn.textContent;sendMessage();}
 function handleKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMessage();}}
 function autoResize(el){el.style.height='auto';el.style.height=Math.min(el.scrollHeight,100)+'px';}
-function showAnalyticsTab(tab,btn){
+
+function showAnalyticsTab(tab, btn){
   document.querySelectorAll('.analytics-panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.analytics-tab').forEach(b=>b.classList.remove('active'));
   document.getElementById('panel-'+tab).classList.add('active');
