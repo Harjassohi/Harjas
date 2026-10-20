@@ -1,707 +1,496 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Harjaspreet Singh — Analytics Engineer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harjaspreet Singh | Data Analytics Projects</title>
+<meta name="description" content="Data analytics projects: Power BI, SQL and Microsoft Fabric reporting, contact-centre analytics, automation and AI agents.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg:#f7f5f2;
-  --bg-warm:#efece6;
-  --bg-soft:#ffffff;
-  --ink:#0a1628;
-  --text:#2d3e52;
-  --text-2:#5a6c80;
-  --text-3:#8a99ad;
-  --border:#e3e0d8;
-  --border-2:#d2cec3;
-  --ms-blue:#0067c0;
-  --ms-purple:#5f3dc4;
-  --ms-green:#107c10;
-  --green:#107c10;
-  --shadow:0 1px 3px rgba(0,0,0,.04);
-  --shadow-md:0 2px 8px rgba(0,0,0,.06);
+:root{
+  --bg:#f7f6f2; --card:#ffffff; --ink:#14213d; --muted:#5b6578; --line:#e3e1d9;
+  --accent:#0b5fd0; --accent-ink:#ffffff; --soft:#e8f0fc; --good:#1b7f4b; --warn:#9a5b00; --warnbg:#fff4e0;
+  --shadow:0 1px 2px rgba(20,33,61,.06),0 8px 24px rgba(20,33,61,.06);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-*::selection{background:var(--ink);color:#fff}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1420; --card:#151d2c; --ink:#eef1f7; --muted:#a3adc0; --line:#25304a;
+    --accent:#6aa9ff; --accent-ink:#0e1420; --soft:#1a2740; --good:#53c58a; --warn:#f0b255; --warnbg:#2a2113;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1420; --card:#151d2c; --ink:#eef1f7; --muted:#a3adc0; --line:#25304a;
+  --accent:#6aa9ff; --accent-ink:#0e1420; --soft:#1a2740; --good:#53c58a; --warn:#f0b255; --warnbg:#2a2113;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);
+}
+*{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:'Inter',-apple-system,sans-serif;font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}
-::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--border-2);border-radius:3px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+img,video{max-width:100%;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:"Source Serif 4",Georgia,serif;line-height:1.2;margin:0}
+h2{font-size:clamp(26px,4vw,36px);margin-bottom:8px}
+h3{font-size:20px}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:10px}
+.lead{color:var(--muted);max-width:680px;margin:0 0 32px}
+section{padding:64px 0;border-top:1px solid var(--line)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;font-weight:600;font-size:15px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;font-family:inherit}
+.btn:hover{text-decoration:none;border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.chip{display:inline-block;font-size:12.5px;padding:3px 10px;border-radius:999px;background:var(--soft);color:var(--accent);font-weight:500;margin:0 6px 6px 0}
 
-.app{display:grid;grid-template-columns:340px 1fr;min-height:100vh;max-width:1440px;margin:0 auto}
+/* nav */
+nav.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+nav.top .brand{font-weight:700;color:var(--ink)}
+nav.top ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:14px}
+nav.top ul a{color:var(--muted)}
+nav.top ul a:hover{color:var(--ink);text-decoration:none}
+nav.top .ext{display:flex;gap:14px;font-size:14px}
+@media(max-width:700px){nav.top ul{display:none}}
 
-/* SIDEBAR */
-.sidebar{background:#0a1628;color:#fff;padding:56px 36px;position:sticky;top:0;height:100vh;overflow-y:auto;display:flex;flex-direction:column}
-.sidebar::-webkit-scrollbar{width:2px}.sidebar::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.08)}
-.photo-frame{width:160px;height:160px;border-radius:50%;margin:0 auto 28px;position:relative;background:linear-gradient(135deg,var(--ms-blue),var(--ms-purple));padding:3px;box-shadow:0 12px 40px rgba(0,103,192,0.25)}
-.photo-inner{width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#1a2940,#0a1628);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
-.photo-img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
-.photo-placeholder{font-family:'Source Serif 4',serif;font-size:56px;font-weight:300;color:rgba(255,255,255,0.7);font-style:italic}
-.availability-dot{position:absolute;bottom:8px;right:8px;width:18px;height:18px;background:var(--ms-green);border:3px solid #0a1628;border-radius:50%;animation:livedot 2s infinite}
-.sidebar-name{font-family:'Source Serif 4',serif;font-size:26px;font-weight:400;line-height:1.2;text-align:center;color:#fff;margin-bottom:5px;letter-spacing:-.01em}
-.sidebar-tagline{font-size:12px;color:rgba(255,255,255,0.45);text-align:center;margin-bottom:3px}
-.sidebar-subtagline{font-size:11px;color:rgba(255,255,255,0.25);text-align:center;margin-bottom:24px;font-style:italic}
-.availability-badge{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(16,124,16,0.1);border:1px solid rgba(16,124,16,0.2);border-radius:6px;margin-bottom:28px}
-.availability-badge .pulse-dot{width:6px;height:6px;background:var(--ms-green);border-radius:50%;flex-shrink:0;animation:livedot 2s infinite;box-shadow:0 0 8px var(--ms-green)}
-.availability-badge-text{font-size:11px;color:rgba(255,255,255,0.55);line-height:1.5}
-.availability-badge-text strong{color:rgba(255,255,255,0.8);font-weight:500}
-.sidebar-divider{height:1px;background:rgba(255,255,255,0.06);margin:20px 0}
-.sidebar-contact{display:flex;flex-direction:column;gap:12px;margin-bottom:24px}
-.contact-item{display:flex;align-items:center;gap:10px;font-size:12px;color:rgba(255,255,255,0.45);text-decoration:none;transition:color .2s}
-.contact-item:hover{color:rgba(255,255,255,0.8)}
-.contact-item-icon{width:26px;height:26px;background:rgba(255,255,255,0.03);border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;color:rgba(255,255,255,0.3)}
-.contact-item-label{font-size:9px;color:rgba(255,255,255,0.25);text-transform:uppercase;letter-spacing:.03em;margin-bottom:1px}
-.contact-item-value{color:rgba(255,255,255,0.6);font-weight:400;font-size:11px}
-.sidebar-nav{display:flex;flex-direction:column;gap:1px;margin-top:auto;padding-top:20px;border-top:1px solid rgba(255,255,255,0.06)}
-.sidebar-nav-label{font-size:9px;color:rgba(255,255,255,0.2);text-transform:uppercase;letter-spacing:.04em;margin-bottom:10px}
-.sidebar-nav a{display:flex;align-items:center;justify-content:space-between;padding:7px 10px;border-radius:4px;font-size:12px;color:rgba(255,255,255,0.4);text-decoration:none;transition:all .2s}
-.sidebar-nav a:hover{background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.8)}
-.sidebar-nav a .num{font-family:'Source Serif 4',serif;font-size:10px;color:rgba(255,255,255,0.2);font-style:italic}
+/* hero */
+.hero{padding:72px 0 56px;border-top:0}
+.hero h1{font-size:clamp(34px,6vw,56px);letter-spacing:-.02em;max-width:860px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p.sub{font-size:18px;color:var(--muted);max-width:680px;margin:18px 0 26px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow)}
+.stat b{display:block;font-family:"Source Serif 4",serif;font-size:34px;color:var(--accent);line-height:1.1}
+.stat span{font-size:13.5px;color:var(--muted)}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
 
-/* MAIN */
-.main{padding:0}
+/* cards */
+.grid{display:grid;gap:18px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:860px){.g3,.g2{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:var(--shadow)}
+.card h3{margin-bottom:8px;font-size:18px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.card ul{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:14.5px}
+.card ul li{margin-bottom:4px}
+.icon{width:38px;height:38px;border-radius:10px;background:var(--soft);display:grid;place-items:center;font-size:19px;margin-bottom:12px}
+.see{display:inline-block;margin-top:12px;font-size:13px;font-weight:600}
 
-/* HERO */
-.hero{padding:96px 80px 80px}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--ms-green);margin-bottom:32px;letter-spacing:.01em}
-.hero-eyebrow-dot{width:6px;height:6px;background:var(--ms-green);border-radius:50%}
-.hero-title{font-family:'Source Serif 4',serif;font-size:clamp(52px,6.5vw,80px);font-weight:300;line-height:0.95;letter-spacing:-.03em;color:var(--ink);margin-bottom:20px}
-.hero-title em{font-style:italic;font-weight:300;color:#4b5563}
-.hero-subtitle{font-family:'Source Serif 4',serif;font-size:clamp(17px,2vw,22px);font-weight:300;font-style:italic;line-height:1.45;color:var(--text-2);margin-bottom:40px;max-width:620px}
-.hero-meta{font-size:11px;color:var(--text-3);margin-bottom:32px;letter-spacing:.02em}
-.hero-description{font-size:17px;line-height:1.8;color:var(--text-2);margin-bottom:16px;max-width:640px}
-.hero-description strong{color:var(--ink);font-weight:500}
-.hero-cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:40px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:5px;font-size:13px;font-weight:500;text-decoration:none;transition:all .2s;letter-spacing:.01em}
-.btn-primary{background:#111827;color:#fff}.btn-primary:hover{background:#1f2937}
-.btn-secondary{background:transparent;color:var(--text-2);border:1px solid var(--border-2)}.btn-secondary:hover{border-color:#111827;color:#111827}
-.btn .arrow{transition:transform .2s;font-size:11px;opacity:.6}.btn:hover .arrow{transform:translateX(3px)}
+/* skills */
+.skillrow{display:grid;grid-template-columns:200px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);align-items:start}
+.skillrow:last-child{border-bottom:0}
+.skillrow strong{font-size:15px}
+@media(max-width:640px){.skillrow{grid-template-columns:1fr}}
 
-/* STATS */
-.stats-band{background:var(--ink);color:#fff;padding:80px 80px}
-.stats-band-eyebrow{font-size:10px;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:.04em;margin-bottom:14px}
-.stats-band-title{font-family:'Source Serif 4',serif;font-size:clamp(28px,3.5vw,42px);font-weight:300;line-height:1.1;color:#fff;margin-bottom:10px;letter-spacing:-.02em}
-.stats-band-title em{font-style:italic;color:rgba(255,255,255,0.4);font-weight:300}
-.stats-band-subtitle{font-size:14px;color:rgba(255,255,255,0.4);max-width:520px;margin-bottom:56px;line-height:1.65}
-.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid rgba(255,255,255,0.06)}
-.stat-block{padding:36px 28px 36px 0;border-right:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06)}
-.stat-block:nth-child(2n){border-right:none;padding-left:28px}
-.stat-block:nth-last-child(-n+2){border-bottom:none}
-.stat-num{font-family:'Source Serif 4',serif;font-size:52px;font-weight:300;line-height:1;color:#fff;margin-bottom:10px;letter-spacing:-.02em}
-.stat-num em{font-style:italic;font-size:22px;color:rgba(255,255,255,0.35);font-weight:300}
-.stat-label{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.6}
+/* projects */
+.feature{display:grid;grid-template-columns:1.05fr 1fr;gap:28px;align-items:start}
+@media(max-width:900px){.feature{grid-template-columns:1fr}}
+.video{border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:#0e1420}
+.video video{width:100%;height:auto}
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.shots a{display:block;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card)}
+.shots img{width:100%;height:150px;object-fit:cover;object-position:top left}
+.shots figcaption{font-size:12px;color:var(--muted);padding:6px 10px}
+.shots figure{margin:0}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:14px 0;font-size:13px}
+.flow span{background:var(--soft);color:var(--accent);padding:4px 10px;border-radius:8px;font-weight:500}
+.flow i{font-style:normal;color:var(--muted)}
+.tag{font-size:12px;font-weight:600;color:var(--good);margin-bottom:8px;display:block}
+.proj .meta{font-size:13px;color:var(--muted);margin-bottom:10px}
+.kpis{display:flex;flex-wrap:wrap;gap:8px 20px;margin:12px 0 4px;font-size:14px}
+.kpis b{color:var(--accent)}
+.compare{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:stretch;margin:16px 0}
+.compare>div{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--bg)}
+.compare h4{margin:0 0 6px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.compare ul{margin:0;padding-left:18px;font-size:14px;color:var(--muted)}
+.compare .mid{display:grid;place-items:center;border:0;background:none;font-size:22px;color:var(--accent);padding:0}
+@media(max-width:700px){.compare{grid-template-columns:1fr}.compare .mid{transform:rotate(90deg)}}
+.notice{font-size:13px;background:var(--warnbg);color:var(--warn);border-radius:10px;padding:10px 12px;margin-top:14px}
+.cols2{columns:2;column-gap:28px}
+@media(max-width:700px){.cols2{columns:1}}
 
-/* SECTIONS */
-.section{padding:88px 80px}
-.section-header{margin-bottom:52px}
-.section-eyebrow{font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:.04em;margin-bottom:16px}
-.section-title{font-family:'Source Serif 4',serif;font-size:clamp(34px,4.5vw,52px);font-weight:300;line-height:1.05;color:var(--ink);margin-bottom:14px;letter-spacing:-.02em}
-.section-title em{font-style:italic;font-weight:300;color:var(--text-2)}
-.section-subtitle{font-size:16px;color:var(--text-2);line-height:1.7;max-width:600px}
 
-/* ACHIEVEMENTS */
-.achievements-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
-.achievement{padding:36px 32px 36px 0;border-bottom:1px solid var(--border)}
-.achievement:nth-child(2n){padding-left:32px;padding-right:0;border-left:1px solid var(--border)}
-.achievement:nth-last-child(-n+2){border-bottom:none}
-.achievement-icon{font-size:18px;margin-bottom:16px;opacity:0.5}
-.achievement-title{font-family:'Source Serif 4',serif;font-size:18px;font-weight:400;line-height:1.3;color:var(--ink);margin-bottom:10px}
-.achievement-desc{font-size:14px;line-height:1.7;color:var(--text-2)}
-.achievement-desc strong{color:var(--text);font-weight:500}
+.xl{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card);font-size:13px}
+.xl-bar{background:#1d6f42;color:#fff;padding:6px 12px;font-size:12px;font-weight:600}
+.xl-wrap{overflow-x:auto}
+.xl table{border-collapse:collapse;width:100%;min-width:480px;font-variant-numeric:tabular-nums}
+.xl th{background:var(--soft);color:var(--ink);text-align:right;padding:5px 10px;border:1px solid var(--line);font-weight:600}
+.xl td{text-align:right;padding:4px 10px;border:1px solid var(--line);color:var(--ink)}
+.xl th:first-child,.xl td:first-child{text-align:left}
+.xl-tabs{display:flex;gap:2px;overflow-x:auto;background:var(--bg);padding:6px 8px 0;border-top:1px solid var(--line);font-size:12px;white-space:nowrap}
+.xl-tabs i,.xl-tabs b{font-style:normal;padding:4px 10px;border:1px solid var(--line);border-bottom:0;border-radius:4px 4px 0 0;color:var(--muted)}
+.xl-tabs b{background:var(--card);color:#1d6f42;border-bottom:2px solid #1d6f42}
+.xl-tabs em{padding:4px 8px;color:var(--muted)}
+.cmp{width:100%;border-collapse:collapse;font-size:14px;margin-top:6px}
+.cmp th,.cmp td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.cmp th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.cmp td:first-child{font-weight:600}
+.cmp td:nth-child(3){color:var(--good)}
+footer{padding:36px 0 90px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+footer .links{display:flex;gap:16px;margin-top:8px}
 
-/* SKILLS */
-.skills-section{background:var(--bg-warm)}
-.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(0,0,0,.04)}
-.skill-card{background:var(--bg-warm);padding:28px 32px;transition:background .2s;min-height:96px;display:flex;flex-direction:column;justify-content:center}
-.skill-card:hover{background:var(--bg-soft)}
-.skill-card-head{display:flex;align-items:center;gap:10px;margin-bottom:5px}
-.skill-card-icon{font-size:15px;opacity:0.45}
-.skill-card-name{font-family:'Source Serif 4',serif;font-size:16px;font-weight:400;color:var(--ink);letter-spacing:-.01em}
-.skill-card-level{font-size:11px;color:var(--text-3);letter-spacing:.02em;padding-left:25px}
-.tools-section{margin-top:32px;padding:28px 32px;background:var(--bg-soft);box-shadow:var(--shadow)}
-.tools-label{font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:.03em;margin-bottom:14px}
-.tools-list{display:flex;flex-wrap:wrap;gap:6px}
-.tool-chip{padding:4px 11px;background:var(--bg-warm);border-radius:4px;font-size:12px;color:var(--text-2);transition:all .2s}
-.tool-chip:hover{color:var(--ink)}
-
-/* PROJECTS */
-.projects-stack{display:flex;flex-direction:column}
-.project{padding:52px 0;border-top:1px solid var(--border);display:grid;grid-template-columns:120px 1fr;gap:48px}
-.project:last-child{border-bottom:1px solid var(--border)}
-.project-id{font-family:'Source Serif 4',serif;font-size:40px;font-weight:300;line-height:1;color:var(--border-2);font-style:italic;padding-top:4px}
-.project-period{font-size:10px;color:var(--text-3);letter-spacing:.02em;margin-bottom:8px;margin-top:4px}
-.project-tag{display:inline-block;font-size:10px;color:var(--text-3);padding:2px 8px;background:var(--bg-warm);border-radius:3px;margin-top:6px}
-.project-title{font-family:'Source Serif 4',serif;font-size:clamp(20px,2.5vw,26px);font-weight:400;line-height:1.2;color:var(--ink);margin-bottom:6px;letter-spacing:-.01em}
-.project-org{font-size:12px;color:var(--text-3);margin-bottom:20px}
-.project-stack-list{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:20px}
-.stack-pill{padding:3px 9px;background:var(--bg-warm);border-radius:3px;font-size:11px;color:var(--text-2)}
-.project-body{font-size:15px;line-height:1.75;color:var(--text-2)}
-.project-body strong{color:var(--text);font-weight:500}
-.project-body p{margin-bottom:10px}
-.project-body ul{padding-left:18px;margin-top:6px}
-.project-body li{margin-bottom:4px}
-.project-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));margin-top:28px;padding-top:24px;border-top:1px solid var(--border)}
-.project-metric{padding-right:16px}
-.project-metric-num{font-family:'Source Serif 4',serif;font-size:24px;font-weight:300;line-height:1;color:var(--ink);margin-bottom:4px;letter-spacing:-.01em}
-.project-metric-num em{font-style:italic;color:var(--text-3);font-size:14px;font-weight:300}
-.project-metric-label{font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:.03em}
-
-/* ARCHITECTURE */
-.arch-section{background:var(--bg-warm)}
-.pipeline-row{margin-bottom:24px}
-.pipeline-label{font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:.03em;margin-bottom:12px}
-.pipeline{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
-.pipeline-step{padding:5px 12px;background:var(--bg-soft);box-shadow:var(--shadow);border-radius:4px;font-size:12px;color:var(--text-2)}
-.pipeline-arrow{color:var(--border-2);font-size:11px}
-
-/* EXPERIENCE */
-.exp-section{background:var(--bg)}
-.exp-list{margin-top:8px}
-.exp-row{display:grid;grid-template-columns:120px 1fr;gap:40px;padding:36px 0;border-top:1px solid var(--border)}
-.exp-row:last-child{border-bottom:1px solid var(--border)}
-.exp-period-text{font-family:'Source Serif 4',serif;font-size:13px;font-weight:300;font-style:italic;color:var(--text-3);line-height:1.5;padding-top:5px}
-.exp-role{font-family:'Source Serif 4',serif;font-size:18px;font-weight:400;line-height:1.25;color:var(--ink);margin-bottom:3px;letter-spacing:-.01em}
-.exp-company{font-size:12px;color:var(--text-3);margin-bottom:14px}
-.exp-desc{font-size:14px;line-height:1.75;color:var(--text-2)}
-.exp-desc ul{padding-left:16px;margin-top:6px}
-.exp-desc li{margin-bottom:5px}
-
-/* EDUCATION */
-.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.edu-card{padding:28px 32px;background:var(--bg-soft);box-shadow:var(--shadow);border-radius:6px;transition:box-shadow .2s}
-.edu-card:hover{box-shadow:var(--shadow-md)}
-.edu-icon{font-size:18px;margin-bottom:14px;opacity:0.45}
-.edu-card h4{font-family:'Source Serif 4',serif;font-size:16px;font-weight:400;line-height:1.3;color:var(--ink);margin-bottom:4px}
-.edu-card p{font-size:13px;color:var(--text-2)}
-.certs{display:flex;flex-wrap:wrap;gap:7px;margin-top:28px}
-.cert{padding:6px 14px;background:var(--bg-soft);box-shadow:var(--shadow);border-radius:4px;font-size:12px;color:var(--text-2);transition:all .2s}
-.cert:hover{color:var(--ink)}
-
-/* ANALYTICS */
-.analytics-section{padding:88px 80px;background:#111827;color:#fff}
-.analytics-eyebrow{font-size:10px;color:rgba(255,255,255,0.25);text-transform:uppercase;letter-spacing:.04em;margin-bottom:16px}
-.analytics-title{font-family:'Source Serif 4',serif;font-size:clamp(32px,4vw,50px);font-weight:300;line-height:1.05;color:#fff;margin-bottom:14px;letter-spacing:-.02em}
-.analytics-title em{font-style:italic;font-weight:300;color:rgba(255,255,255,0.35)}
-.analytics-subtitle{font-size:15px;color:rgba(255,255,255,0.35);margin-bottom:36px;max-width:520px;line-height:1.7}
-.analytics-pipeline{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:32px}
-.pipeline-step-dark{padding:4px 11px;background:rgba(255,255,255,0.04);border-radius:4px;font-size:11px;color:rgba(255,255,255,0.4)}
-.pipeline-arrow-dark{color:rgba(255,255,255,0.12);font-size:11px}
-.analytics-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.7);border-radius:4px;text-decoration:none;font-size:12px;font-weight:400;transition:all .2s}
-.analytics-btn:hover{background:rgba(255,255,255,0.12);color:#fff}
-.analytics-tabs{display:flex;gap:2px;margin-bottom:20px}
-.analytics-tab{padding:6px 14px;border-radius:4px;font-size:11px;cursor:pointer;background:transparent;color:rgba(255,255,255,0.35);border:none;transition:all .2s}
-.analytics-tab.active{background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.8)}
-.analytics-panel{display:none}.analytics-panel.active{display:block}
-
-/* FOOTER */
-footer{background:var(--bg-warm);padding:88px 80px 60px}
-.footer-title{font-family:'Source Serif 4',serif;font-size:clamp(36px,5vw,58px);font-weight:300;line-height:1.05;color:var(--ink);margin-bottom:16px;letter-spacing:-.02em}
-.footer-title em{font-style:italic;font-weight:300;color:var(--text-2)}
-.footer-tagline{font-size:15px;color:var(--text-2);margin-bottom:40px;line-height:1.75;max-width:560px}
-.footer-links{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:44px}
-.footer-link{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;background:var(--bg-soft);box-shadow:var(--shadow);border-radius:4px;font-size:13px;color:var(--text-2);text-decoration:none;transition:all .2s}
-.footer-link:hover{background:var(--ink);color:#fff;box-shadow:none}
-.footer-meta{padding-top:24px;border-top:1px solid var(--border);font-size:11px;color:var(--text-3);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-
-/* CHATBOT */
-#chat-bubble{position:fixed;bottom:24px;right:24px;z-index:9999}
-#chat-toggle{width:52px;height:52px;border-radius:50%;background:#0a1628;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(10,22,40,.25);transition:all .3s;position:relative}
-#chat-toggle:hover{background:var(--ms-blue);transform:scale(1.04)}
-#chat-toggle svg{width:22px;height:22px;fill:#fff}
-#chat-toggle .chat-dot{position:absolute;top:8px;right:8px;width:9px;height:9px;background:var(--ms-green);border:2px solid #0a1628;border-radius:50%;animation:livedot 2s infinite}
-#chat-window{position:fixed;bottom:88px;right:24px;width:360px;max-height:540px;background:#fff;border-radius:10px;box-shadow:0 12px 48px rgba(0,0,0,.12);display:none;flex-direction:column;overflow:hidden;z-index:9998}
-#chat-window.open{display:flex;animation:slideUp .2s ease}
-@keyframes slideUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-#chat-header{background:#111827;padding:14px 16px;display:flex;align-items:center;gap:10px}
-#chat-header-avatar{width:32px;height:32px;background:#1f2937;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Source Serif 4',serif;font-size:12px;color:rgba(255,255,255,0.5);font-style:italic}
-#chat-header-info{flex:1}
-#chat-header-name{font-size:12px;font-weight:500;color:#fff}
-#chat-header-status{font-size:10px;color:rgba(255,255,255,0.35);display:flex;align-items:center;gap:4px}
-#chat-header-status::before{content:'';display:inline-block;width:4px;height:4px;background:var(--green);border-radius:50%}
-#chat-close{background:none;border:none;cursor:pointer;color:rgba(255,255,255,0.25);font-size:16px;padding:4px;line-height:1}
-#chat-close:hover{color:rgba(255,255,255,.6)}
-#chat-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:var(--bg)}
-.chat-msg{display:flex;gap:7px}
-.chat-msg.user{flex-direction:row-reverse}
-.chat-msg-avatar{width:26px;height:26px;border-radius:50%;flex-shrink:0;background:#1f2937;display:flex;align-items:center;justify-content:center;font-size:9px;color:rgba(255,255,255,0.5);font-family:'Source Serif 4',serif;font-style:italic}
-.chat-msg.user .chat-msg-avatar{background:var(--border-2)}
-.chat-msg-bubble{max-width:83%;padding:9px 13px;border-radius:8px;font-size:13px;line-height:1.6;color:var(--text);background:#fff;box-shadow:var(--shadow)}
-.chat-msg.user .chat-msg-bubble{background:#111827;color:#fff;box-shadow:none;border-radius:8px 8px 2px 8px}
-.chat-msg:not(.user) .chat-msg-bubble{border-radius:2px 8px 8px 8px}
-.chat-typing{display:flex;gap:4px;align-items:center;padding:11px 13px;background:#fff;box-shadow:var(--shadow);border-radius:2px 8px 8px 8px}
-.chat-typing span{width:5px;height:5px;background:var(--text-3);border-radius:50%;animation:bounce 1.2s infinite}
-.chat-typing span:nth-child(2){animation-delay:.2s}.chat-typing span:nth-child(3){animation-delay:.4s}
-@keyframes bounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-4px)}}
-.chat-suggestions{display:flex;flex-wrap:wrap;gap:5px;padding:0 16px 10px;background:var(--bg)}
-.chat-suggestion{padding:4px 10px;background:#fff;box-shadow:var(--shadow);border-radius:4px;font-size:11px;color:var(--text-2);cursor:pointer;transition:all .2s;white-space:nowrap}
-.chat-suggestion:hover{color:var(--ink);box-shadow:var(--shadow-md)}
-#chat-input-area{padding:11px 13px;background:#fff;display:flex;gap:7px;align-items:flex-end;border-top:1px solid var(--border)}
-#chat-input{flex:1;border:none;border-radius:6px;padding:8px 11px;font-size:13px;font-family:inherit;color:var(--ink);resize:none;outline:none;max-height:100px;line-height:1.4;background:var(--bg)}
-#chat-input::placeholder{color:var(--text-3)}
-#chat-send{width:34px;height:34px;background:#111827;border:none;border-radius:6px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
-#chat-send:hover{background:#1f2937}
-#chat-send svg{width:15px;height:15px;fill:#fff}
-#chat-send:disabled{opacity:0.35;cursor:not-allowed}
-#chat-footer-note{padding:6px 13px;background:#fff;font-size:10px;color:var(--text-3);text-align:center;border-top:1px solid var(--border);display:flex;flex-direction:column;align-items:center;gap:5px}
-.chat-dash-btn{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;background:var(--ink);color:#fff;border-radius:3px;text-decoration:none;font-size:10px;transition:background .2s}
-.chat-dash-btn:hover{background:#1f2937}
-
-@keyframes livedot{0%,100%{box-shadow:0 0 0 1px var(--ms-green),0 0 12px var(--ms-green)}50%{box-shadow:0 0 0 1px var(--ms-green),0 0 24px var(--ms-green)}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-.hero>*{animation:fadeUp .8s ease both}
-.hero>*:nth-child(2){animation-delay:.08s}.hero>*:nth-child(3){animation-delay:.16s}
-.hero>*:nth-child(4){animation-delay:.24s}.hero>*:nth-child(5){animation-delay:.32s}
-.hero>*:nth-child(6){animation-delay:.40s}.hero>*:nth-child(7){animation-delay:.48s}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-.sidebar>*{animation:fadeIn .8s ease both}
-
-@media(max-width:1100px){.app{grid-template-columns:300px 1fr}.sidebar{padding:44px 28px}.hero,.section,footer,.stats-band,.analytics-section{padding-left:52px;padding-right:52px}}
-@media(max-width:900px){.app{grid-template-columns:1fr}.sidebar{position:relative;height:auto;padding:40px 24px 28px}.sidebar-name{font-size:22px}.sidebar-nav{display:none}.hero,.section,footer,.stats-band,.analytics-section{padding-left:24px;padding-right:24px}.hero{padding-top:52px;padding-bottom:44px}.section{padding-top:60px;padding-bottom:60px}.stats-band,.analytics-section{padding-top:52px;padding-bottom:52px}footer{padding-top:60px;padding-bottom:40px}.achievements-grid{grid-template-columns:1fr}.achievement,.achievement:nth-child(2n){border-left:none;padding-left:0;padding-right:0}.skills-grid{grid-template-columns:1fr}.project,.exp-row{grid-template-columns:1fr;gap:10px}.project{padding:36px 0}.edu-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:1fr}.stat-block,.stat-block:nth-child(2n){border-right:none;padding-left:0;padding-right:0;border-bottom:1px solid rgba(255,255,255,0.06)}.stat-block:last-child{border-bottom:none}#chat-window{width:calc(100vw - 24px);right:12px}}
+/* chat */
+#chat-fab{position:fixed;right:20px;bottom:20px;z-index:50;background:var(--accent);color:var(--accent-ink);border:0;border-radius:999px;padding:14px 20px;font:600 15px Inter,sans-serif;cursor:pointer;box-shadow:0 8px 28px rgba(11,95,208,.35);display:flex;gap:8px;align-items:center}
+#chat{position:fixed;right:20px;bottom:84px;z-index:50;width:min(390px,calc(100vw - 28px));height:min(560px,calc(100vh - 110px));background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 60px rgba(0,0,0,.28);display:none;flex-direction:column;overflow:hidden}
+#chat.open{display:flex}
+#chat header{padding:14px 16px;background:var(--accent);color:var(--accent-ink);display:flex;justify-content:space-between;align-items:center}
+#chat header b{display:block;font-size:15px}
+#chat header small{opacity:.85;font-size:12px}
+#chat header button{background:transparent;border:0;color:inherit;font-size:20px;cursor:pointer}
+#msgs{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:10px;background:var(--bg)}
+.m{max-width:88%;padding:10px 13px;border-radius:14px;font-size:14.5px;line-height:1.5;white-space:pre-wrap;word-wrap:break-word}
+.m.bot{background:var(--card);border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:4px}
+.m.me{background:var(--accent);color:var(--accent-ink);align-self:flex-end;border-bottom-right-radius:4px}
+.m.typing{opacity:.6;font-style:italic}
+#sugs{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px;background:var(--bg)}
+#sugs button{font:500 12.5px Inter,sans-serif;border:1px solid var(--line);background:var(--card);color:var(--accent);border-radius:999px;padding:6px 11px;cursor:pointer}
+#chat form{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line);background:var(--card)}
+#chat input{flex:1;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:10px;padding:10px 12px;font:15px Inter,sans-serif}
+#chat form button{border:0;background:var(--accent);color:var(--accent-ink);border-radius:10px;padding:0 16px;font-weight:600;cursor:pointer}
+.note{font-size:11.5px;color:var(--muted);text-align:center;padding:0 12px 8px;background:var(--card)}
 </style>
 </head>
 <body>
-<div class="app">
 
-<aside class="sidebar">
-  <div class="photo-frame">
-    <div class="photo-inner">
-      <!-- TO ADD PHOTO: replace with <img class="photo-img" src="profile.jpg" alt="Harjaspreet Singh"/> -->
-      <div class="photo-placeholder">HS</div>
-      <div class="availability-dot"></div>
+<nav class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Harjaspreet Singh</a>
+    <ul>
+      <li><a href="#can-do">What I can do</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Tools and skills</a></li>
+    </ul>
+    <div class="ext">
+      <a href="https://www.linkedin.com/in/harjaspreetsingh/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://github.com/Harjassohi" target="_blank" rel="noopener">GitHub ↗</a>
     </div>
   </div>
-  <h1 class="sidebar-name">Harjaspreet Singh</h1>
-  <div class="sidebar-tagline">Analytics Engineer</div>
-  <div class="sidebar-subtagline">Microsoft Fabric &amp; Power Platform</div>
-  <div class="availability-badge">
-    <div class="pulse-dot"></div>
-    <div class="availability-badge-text"><strong>Based in Auckland</strong> · Open to new opportunities</div>
-  </div>
-  <div class="sidebar-divider"></div>
-  <div class="sidebar-contact">
-    <a href="tel:+64224155125" class="contact-item"><div class="contact-item-icon">📞</div><div><div class="contact-item-label">Phone</div><div class="contact-item-value">+64 22 415 5125</div></div></a>
-    <a href="mailto:harjaspreetsohi@outlook.com" class="contact-item"><div class="contact-item-icon">✉</div><div><div class="contact-item-label">Email</div><div class="contact-item-value">harjaspreetsohi@outlook.com</div></div></a>
-    <div class="contact-item"><div class="contact-item-icon">📍</div><div><div class="contact-item-label">Location</div><div class="contact-item-value">Auckland, New Zealand</div></div></div>
-    <a href="https://www.linkedin.com/in/harjaspreetsingh/" target="_blank" class="contact-item"><div class="contact-item-icon">in</div><div><div class="contact-item-label">LinkedIn</div><div class="contact-item-value">harjaspreetsingh ↗</div></div></a>
-    <a href="https://github.com/Harjassohi" target="_blank" class="contact-item"><div class="contact-item-icon">⌘</div><div><div class="contact-item-label">GitHub</div><div class="contact-item-value">Harjassohi ↗</div></div></a>
-  </div>
-  <nav class="sidebar-nav">
-    <div class="sidebar-nav-label">Navigate</div>
-    <a href="#about"><span>About</span><span class="num">01</span></a>
-    <a href="#achievements"><span>Achievements</span><span class="num">02</span></a>
-    <a href="#skills"><span>Skills</span><span class="num">03</span></a>
-    <a href="#projects"><span>Projects</span><span class="num">04</span></a>
-    <a href="#architecture"><span>Architecture</span><span class="num">05</span></a>
-    <a href="#experience"><span>Experience</span><span class="num">06</span></a>
-    <a href="#education"><span>Education</span><span class="num">07</span></a>
-    <a href="#analytics"><span>Live Analytics</span><span class="num">08</span></a>
-  </nav>
-</aside>
+</nav>
 
-<main class="main">
-
-  <!-- HERO -->
-  <section class="hero" id="about">
-    <div class="hero-eyebrow"><div class="hero-eyebrow-dot"></div>Auckland, New Zealand · Available now</div>
-    <h1 class="hero-title">Analytics <em>Engineer</em></h1>
-    <h2 class="hero-subtitle">Operational analytics and automation using Microsoft Fabric and Power BI.</h2>
-    <div class="hero-meta">Microsoft Fabric · Power BI · Power Platform · 15+ Years</div>
-    <p class="hero-description">Designing enterprise reporting systems, semantic models, and workflow automation across telecom, retail, and contact centre environments.</p>
-    <p class="hero-description">Systems supporting <strong>4,500+ agents</strong>, reporting effort reduced by <strong>80%</strong>, and <strong>50+ data sources</strong> unified into a single KPI platform.</p>
-    <div class="hero-cta-row">
-      <a href="#projects" class="btn btn-primary">View Projects <span class="arrow">→</span></a>
-      <a href="https://www.linkedin.com/in/harjaspreetsingh/" target="_blank" class="btn btn-secondary">LinkedIn <span class="arrow">↗</span></a>
-      <a href="https://github.com/Harjassohi" target="_blank" class="btn btn-secondary">GitHub <span class="arrow">↗</span></a>
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Data and reporting projects</div>
+    <h1>Reporting and <em>data analytics</em> projects.</h1>
+    <p class="sub">Projects covering Power BI reports, SQL data models, scheduled pipelines on Microsoft Fabric, and AI assistants that query data or update planned numbers.</p>
+    <div class="cta">
+      <a class="btn primary" href="#projects">View the projects</a>
+      <button class="btn" onclick="openChat()">💬 Ask the AI assistant</button>
     </div>
-  </section>
-
-  <!-- STATS -->
-  <div class="stats-band">
-    <div class="stats-band-eyebrow">By the numbers</div>
-    <h2 class="stats-band-title">Real outcomes, <em>real scale.</em></h2>
-    <p class="stats-band-subtitle">Built in production — not demos.</p>
-    <div class="stats-grid">
-      <div class="stat-block"><div class="stat-num">4,500<em>+</em></div><div class="stat-label">Agents tracked across automated WFM reporting in 22 telecom circles</div></div>
-      <div class="stat-block"><div class="stat-num">900<em>GB</em></div><div class="stat-label">Six-month trend data published in 1.5 hours via Power Pivot</div></div>
-      <div class="stat-block"><div class="stat-num">80<em>%</em></div><div class="stat-label">Manual reporting workload eliminated through automation</div></div>
-      <div class="stat-block"><div class="stat-num">50<em>+</em></div><div class="stat-label">Operational data sources unified into a single KPI platform</div></div>
+    <div class="stats">
+      <div class="stat"><b>4,500+</b><span>agents covered by the reporting</span></div>
+      <div class="stat"><b>80%</b><span>less manual reporting effort</span></div>
+      <div class="stat"><b>50+</b><span>data sources brought into one KPI platform</span></div>
+      <div class="stat"><b>2</b><span>AI agents: one answers questions, one edits planned numbers</span></div>
     </div>
   </div>
+</header>
 
-  <!-- ACHIEVEMENTS -->
-  <section class="section" id="achievements">
-    <div class="section-header">
-      <div class="section-eyebrow">Highlights</div>
-      <h2 class="section-title">Selected <em>work.</em></h2>
-      <p class="section-subtitle">Outcomes across data engineering, automation, and analytics.</p>
+<section id="can-do">
+  <div class="wrap">
+    <div class="eyebrow">What I can do</div>
+    <h2>What I can do.</h2>
+    <p class="lead">Each area below is covered by one of the projects on this page.</p>
+    <div class="grid g3">
+      <div class="card"><div class="icon">📊</div><h3>Power BI reporting</h3><p>Power BI reports and semantic models with DAX measures, drill-downs and matrices showing metrics by day and by 30-minute interval.</p><a class="see" href="#p-fabric">See the Fabric report →</a></div>
+      <div class="card"><div class="icon">🗄️</div><h3>Data modelling and SQL</h3><p>T-SQL, Power Query and star-schema modelling, with row-count, date and orphan-record checks in the SQL layer.</p><a class="see" href="#p-fabric">See the SQL layer →</a></div>
+      <div class="card"><div class="icon">📞</div><h3>Contact-centre analytics</h3><p>Service level (80/20, 90/60), abandon rate, AHT, hold, ACW, forecast vs offered, shrinkage and agent productivity across voice, chat and email.</p><a class="see" href="#p-legacy">See the original report →</a></div>
+      <div class="card"><div class="icon">⚙️</div><h3>Reporting automation</h3><p>Fabric pipelines, Power Automate, VBA and scheduled refresh in place of manual daily reports. One refresh-and-email job ran in 10 minutes.</p><a class="see" href="#p-legacy">See the automation →</a></div>
+      <div class="card"><div class="icon">🤖</div><h3>AI assistants on data</h3><p>A Fabric Data Agent answers questions on the data. A Copilot Studio agent updates planned numbers through a stored procedure with validation and an audit log.</p><a class="see" href="#p-fabric">See the agents →</a></div>
+      <div class="card"><div class="icon">🧭</div><h3>Moving legacy reports</h3><p>Moving Excel, Access and VBA workbooks onto Fabric while keeping the existing KPI definitions.</p><a class="see" href="#p-compare">See before and after →</a></div>
     </div>
-    <div class="achievements-grid">
-      <div class="achievement"><div class="achievement-icon">⚡</div><h3 class="achievement-title">Microsoft Fabric pipelines</h3><p class="achievement-desc">Lakehouse → Dataflow Gen2 → SQL Views → Semantic Model → Power BI. Published NZ economic indicator analysis using <strong>RBNZ and MBIE</strong> public datasets.</p></div>
-      <div class="achievement"><div class="achievement-icon">🤖</div><h3 class="achievement-title">AI integration on Fabric</h3><p class="achievement-desc">Deployed a <strong>Copilot Studio assistant</strong> grounded on Fabric Lakehouse — surfaced in Teams and Power Pages for self-service analytics without analyst involvement.</p></div>
-      <div class="achievement"><div class="achievement-icon">📊</div><h3 class="achievement-title">Enterprise semantic models</h3><p class="achievement-desc">Power BI semantic models as the <strong>single source of truth</strong> at Reliance Jio — SLA monitoring, performance tracking, and standardised KPIs across 22 circles.</p></div>
-      <div class="achievement"><div class="achievement-icon">⬡</div><h3 class="achievement-title">Power Apps with Fabric writeback</h3><p class="achievement-desc">Power Apps with <strong>Dataverse writeback to Microsoft Fabric</strong> — Field Service Tracker, stock management, and order tracking reducing manual data entry.</p></div>
-      <div class="achievement"><div class="achievement-icon">🔄</div><h3 class="achievement-title">PDF invoice automation</h3><p class="achievement-desc"><strong>Power Automate Desktop + VBScript</strong> pipeline looping through emails and attachments, extracting structured data to Excel. Zero manual entry, zero licensing cost.</p></div>
-      <div class="achievement"><div class="achievement-icon">📡</div><h3 class="achievement-title">Real-time analytics pipeline</h3><p class="achievement-desc"><strong>Claude API → Cloudflare → Azure Function → Fabric Eventhouse → Power BI</strong> — recruiter conversations logged and visualised live. Running on this portfolio now.</p></div>
-      <div class="achievement"><div class="achievement-icon">📈</div><h3 class="achievement-title">Power Pivot at scale</h3><p class="achievement-desc"><strong>900 GB of 6-month trends in 1.5 hours</strong> — faster than Tableau, refreshed daily from 50+ sources across Jio's telecom, fibre, and financial services divisions.</p></div>
-      <div class="achievement"><div class="achievement-icon">⏱</div><h3 class="achievement-title">80% manual effort eliminated</h3><p class="achievement-desc">Replaced a manual WFM reporting workload using SQL, MS Access, Excel, and VBA. <strong>10 GB of trends refreshed, visualised, and emailed in 10 minutes.</strong></p></div>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <!-- SKILLS -->
-  <section class="section skills-section" id="skills">
-    <div class="section-header">
-      <div class="section-eyebrow">Stack</div>
-      <h2 class="section-title">Skills &amp; <em>tools.</em></h2>
-      <p class="section-subtitle">15+ years across the Microsoft data stack.</p>
-    </div>
-    <div class="skills-grid">
-      <div class="skill-card"><div class="skill-card-head"><div class="skill-card-icon">📊</div><div class="skill-card-name">Power BI &amp; Semantic Models</div></div><div class="skill-card-level">Expert</div></div>
-      <div class="skill-card"><div class="skill-card-head"><div class="skill-card-icon">⚡</div><div class="skill-card-name">Microsoft Fabric</div></div><div class="skill-card-level">Advanced</div></div>
-      <div class="skill-card"><div class="skill-card-head"><div class="skill-card-icon">🔄</div><div class="skill-card-name">Power Platform Automation</div></div><div class="skill-card-level">Advanced</div></div>
-      <div class="skill-card"><div class="skill-card-head"><div class="skill-card-icon">🗄️</div><div class="skill-card-name">SQL, Power Query &amp; Data Modelling</div></div><div class="skill-card-level">Expert</div></div>
-      <div class="skill-card"><div class="skill-card-head"><div class="skill-card-icon">📡</div><div class="skill-card-name">Operational Analytics &amp; Monitoring</div></div><div class="skill-card-level">Expert</div></div>
-      <div class="skill-card"><div class="skill-card-head"><div class="skill-card-icon">🤖</div><div class="skill-card-name">AI Integration &amp; Automation</div></div><div class="skill-card-level">Advanced</div></div>
-      <div class="skill-card"><div class="skill-card-head"><div class="skill-card-icon">💻</div><div class="skill-card-name">VBA, VBScript &amp; Advanced Excel</div></div><div class="skill-card-level">Expert</div></div>
-      <div class="skill-card"><div class="skill-card-head"><div class="skill-card-icon">📞</div><div class="skill-card-name">WFM &amp; Contact Centre Analytics</div></div><div class="skill-card-level">Expert · 15+ Years</div></div>
-    </div>
-    <div class="tools-section">
-      <div class="tools-label">Technologies</div>
-      <div class="tools-list">
-        <span class="tool-chip">Power BI</span><span class="tool-chip">Semantic Models</span><span class="tool-chip">Power Pivot</span><span class="tool-chip">Excel</span><span class="tool-chip">VBA</span><span class="tool-chip">VBScript</span><span class="tool-chip">SQL</span><span class="tool-chip">KQL</span><span class="tool-chip">MS Access</span><span class="tool-chip">Microsoft Fabric</span><span class="tool-chip">Lakehouse</span><span class="tool-chip">Eventhouse</span><span class="tool-chip">Dataflow Gen2</span><span class="tool-chip">Dataverse</span><span class="tool-chip">Power Apps</span><span class="tool-chip">Power Automate</span><span class="tool-chip">Copilot Studio</span><span class="tool-chip">Azure Functions</span><span class="tool-chip">Cloudflare Workers</span><span class="tool-chip">Six Sigma</span>
-      </div>
-    </div>
-  </section>
+<section id="projects">
+  <div class="wrap">
+    <div class="eyebrow">Projects</div>
+    <h2>Projects.</h2>
+    <p class="lead">The Fabric rebuild, the original report it is based on, and other projects.</p>
 
-  <!-- PROJECTS -->
-  <section class="section" id="projects">
-    <div class="section-header">
-      <div class="section-eyebrow">Work</div>
-      <h2 class="section-title">Projects that <em>shipped.</em></h2>
-      <p class="section-subtitle">Production builds in data engineering, automation, and analytics.</p>
-    </div>
-    <div class="projects-stack">
-      <div class="project">
-        <div><div class="project-id">01</div><div class="project-period">Nov 2020 – Jul 2021</div><span class="project-tag">Free Tools Only</span></div>
+    <div class="card proj" style="padding:26px" id="p-fabric">
+      <span class="tag">LATEST · Microsoft Fabric · synthetic data</span>
+      <h3 style="font-size:26px;margin-bottom:6px">Real-Time Contact Centre Monitoring on Fabric</h3>
+      <div class="meta">Warehouse · T-SQL · Power BI · Fabric Data Agent · Copilot Studio</div>
+      <div class="feature">
         <div>
-          <h3 class="project-title">Automated WFM Reporting — Reliance Jio</h3>
-          <div class="project-org">Reliance Jio · Telecom / Fiber / Financial Services · Mumbai</div>
-          <div class="project-stack-list"><span class="stack-pill">Power Pivot</span><span class="stack-pill">MS Access</span><span class="stack-pill">VBA</span><span class="stack-pill">Excel</span><span class="stack-pill">Email Automation</span></div>
-          <div class="project-body">
-            <p>Enterprise analytics platform for Jio's contact centre — Mobility, Fiber, and Financial Services. Integrated half-hourly data from <strong>50+ sources</strong> including calls, tagging, inbound, outbound, chat, and email feeds.</p>
-            <p>Fully automated: refreshes, visualises, and emails <strong>10 GB of trends in 10 minutes</strong>. Monthly reports publish <strong>900 GB of six-month data in 1.5 hours</strong> — built entirely on free Microsoft tools.</p>
+          <p style="color:var(--muted);margin:0 0 12px">A rebuild of my Excel, Access and VBA performance report on Microsoft Fabric. Raw contact-centre dumps load through pipelines, are transformed in SQL and feed one semantic model. Users can ask questions of the data or change a forecast through chat, and the change appears in the report.</p>
+          <div class="flow"><span>CSV / API dumps</span><i>→</i><span>Lakehouse</span><i>→</i><span>Warehouse (T-SQL)</span><i>→</i><span>Semantic model</span><i>→</i><span>Power BI</span></div>
+          <div class="flow"><span>Copilot Studio</span><i>→</i><span>SQL database + stored procedure</span><i>→</i><span>Pipeline sync</span><i>→</i><span>Warehouse</span><i>→</i><span>Report</span></div>
+          <ul style="color:var(--muted);padding-left:18px;margin:10px 0 0;font-size:14.5px">
+            <li><b>Report:</b> service level, abandon rate, forecast vs offered, CSAT and agent productivity by interval, with heat-map matrices.</li>
+            <li><b>Data Agent (read-only):</b> answers questions on top of the semantic model.</li>
+            <li><b>Copilot Studio agent (write-back):</b> saves planned-number overrides through a stored procedure with validation and an audit trail.</li>
+            <li><b>Pipelines:</b> sync overrides, then refresh the semantic model on a schedule.</li>
+            <li><b>Planned:</b> row-level security by team leader, so each leader sees only their own team.</li>
+          </ul>
+          <div class="kpis"></div>
+          <p style="font-size:13px;color:var(--muted);margin-top:10px">All data shown is synthetic.</p>
+        </div>
+        <div>
+          <div class="video">
+            <video controls preload="metadata" playsinline>
+              <source src="media/Forecast_Agent_Demo.mp4" type="video/mp4">
+              Your browser does not support video. <a href="media/Forecast_Agent_Demo.mp4">Download the demo</a>.
+            </video>
           </div>
-          <div class="project-metrics">
-            <div class="project-metric"><div class="project-metric-num">4,500<em>+</em></div><div class="project-metric-label">Agents</div></div>
-            <div class="project-metric"><div class="project-metric-num">22</div><div class="project-metric-label">Circles</div></div>
-            <div class="project-metric"><div class="project-metric-num">2L<em>+</em></div><div class="project-metric-label">Calls / Day</div></div>
-            <div class="project-metric"><div class="project-metric-num">80<em>%</em></div><div class="project-metric-label">Effort Saved</div></div>
-            <div class="project-metric"><div class="project-metric-num">900<em>GB</em></div><div class="project-metric-label">In 1.5 Hrs</div></div>
+          <div class="shots">
+            <figure><a href="media/sl-performance.png" target="_blank" rel="noopener"><img src="media/sl-performance.png" alt="Service level by date and interval with heat-map matrix" loading="lazy"></a><figcaption>Service level by date and interval</figcaption></figure>
+            <figure><a href="media/interval-table.png" target="_blank" rel="noopener"><img src="media/interval-table.png" alt="Interval table with capacity, forecast, offered, answered and SL%" loading="lazy"></a><figcaption>Interval table</figcaption></figure>
           </div>
         </div>
       </div>
-      <div class="project">
-        <div><div class="project-id">02</div><div class="project-period">Process Automation</div><span class="project-tag">Zero Licensing</span></div>
+
+
+      <div style="margin-top:26px">
+        <h3 style="font-size:18px">What the original looked like</h3>
+        <p style="color:var(--muted);font-size:14.5px;margin:6px 0 12px">A recreated layout of one tab, the 30-minute interval view by queue. The numbers are synthetic; the real report is internal and is not shown.</p>
+        <div class="xl" role="img" aria-label="Excel-style interval table with sheet tabs">
+          <div class="xl-bar"><span>Hourly Performance Report.xlsb</span></div>
+          <div class="xl-wrap"><table><thead><tr><th>Interval</th><th>Forecast</th><th>Capacity</th><th>Offer</th><th>Answer</th><th>O2F%</th><th>A2F%</th></tr></thead><tbody><tr><td>08:00</td><td>462</td><td>440</td><td>493</td><td>447</td><td>107%</td><td>97%</td></tr><tr><td>08:30</td><td>392</td><td>350</td><td>459</td><td>448</td><td>117%</td><td>114%</td></tr><tr><td>09:00</td><td>473</td><td>427</td><td>532</td><td>514</td><td>112%</td><td>109%</td></tr><tr><td>09:30</td><td>389</td><td>351</td><td>430</td><td>399</td><td>111%</td><td>103%</td></tr><tr><td>10:00</td><td>397</td><td>398</td><td>350</td><td>310</td><td>88%</td><td>78%</td></tr><tr><td>10:30</td><td>488</td><td>443</td><td>449</td><td>430</td><td>92%</td><td>88%</td></tr><tr><td>11:00</td><td>541</td><td>496</td><td>572</td><td>564</td><td>106%</td><td>104%</td></tr><tr><td>11:30</td><td>436</td><td>387</td><td>400</td><td>377</td><td>92%</td><td>86%</td></tr><tr><td>12:00</td><td>487</td><td>463</td><td>555</td><td>543</td><td>114%</td><td>111%</td></tr><tr><td>12:30</td><td>526</td><td>544</td><td>502</td><td>491</td><td>95%</td><td>93%</td></tr><tr><td>13:00</td><td>528</td><td>516</td><td>553</td><td>542</td><td>105%</td><td>103%</td></tr><tr><td>13:30</td><td>520</td><td>476</td><td>465</td><td>421</td><td>89%</td><td>81%</td></tr></tbody></table></div>
+          <div class="xl-tabs"><i>Glossary</i><i>Advisor</i><b>Interval</b><i>Circle wise</i><i>LOB Wise</i><i>AHT</i><i>Shrinkage</i><i>Forecast</i><i>Inputs</i><i>Working Pivot</i><em>… 24 tabs</em></div>
+        </div>
+      </div>
+      <div id="p-compare" style="margin-top:26px">
+        <h3 style="font-size:18px">Before and after</h3>
+        <div class="compare">
+          <div>
+            <h4>Before: Excel, Access, VBA</h4>
+            <ul>
+              <li>One workbook of about 24 tabs (around 23 MB)</li>
+              <li>Cisco dumps loaded by hand, refreshed with macros</li>
+              <li>Pivot tables rebuilt each day, then emailed</li>
+              <li>Planned numbers changed by editing the file</li>
+            </ul>
+          </div>
+          <div class="mid">→</div>
+          <div>
+            <h4>After: Fabric and Power BI</h4>
+            <ul>
+              <li>Data in a Warehouse, logic in SQL, one semantic model</li>
+              <li>Pipelines refresh data and report on a schedule</li>
+              <li>Heat-map matrices and an interval table in Power BI</li>
+              <li>Planned numbers changed by chat, with validation and an audit log</li>
+            </ul>
+          </div>
+        </div>
+
+        <table class="cmp"><thead><tr><th></th><th>Excel, Access, VBA</th><th>Fabric, SQL, Power BI</th></tr></thead><tbody>
+          <tr><td>Data loading</td><td>Cisco dumps pasted or loaded by hand</td><td>Pipelines load raw files on a schedule</td></tr>
+          <tr><td>Logic</td><td>Formulas, macros and pivots spread over about 24 tabs</td><td>One SQL layer, one semantic model</td></tr>
+          <tr><td>Refresh</td><td>Run macros, then email the file</td><td>Scheduled refresh, report always current</td></tr>
+          <tr><td>Viewing</td><td>Scroll tabs, rebuild pivots</td><td>Heat-map matrices, filters, drill-down</td></tr>
+          <tr><td>Changing a plan</td><td>Edit cells in the file</td><td>Ask the agent; validated and audited</td></tr>
+          <tr><td>Asking a question</td><td>Ask the analyst</td><td>Ask the data agent in plain English</td></tr>
+        </tbody></table>
+      </div>
+    </div>
+
+    <div class="card proj" style="padding:26px;margin-top:18px" id="p-legacy">
+      <span class="tag">Production · Telecom contact centre</span>
+      <h3 style="font-size:24px;margin-bottom:6px">Hourly Performance Report: Excel, Access, VBA and Power Pivot</h3>
+      <div class="meta">Excel · MS Access · VBA · Power Pivot · Cisco dumps · Reliance Jio</div>
+      <p style="margin-bottom:12px">The original report that the Fabric project rebuilds. I designed and ran it for a large telecom contact centre. Two raw dumps went in: Cisco service-level data by call queue and 30-minute interval, and an agent productivity dump. One workbook came out with views for every level of the operation.</p>
+      <div class="grid g2">
         <div>
-          <h3 class="project-title">PDF Invoice → Excel Automation</h3>
-          <div class="project-org">Power Automate Desktop · VBA · VBScript</div>
-          <div class="project-stack-list"><span class="stack-pill">Power Automate Desktop</span><span class="stack-pill">VBScript</span><span class="stack-pill">VBA</span><span class="stack-pill">Email Parsing</span></div>
-          <div class="project-body"><p>Automated PDF invoice processing at zero licensing cost. Loops through emails and attachments — extracting date, order number, customer details, and line items directly to Excel. No manual entry.</p></div>
+          <h3 style="font-size:16px;margin-bottom:6px">What it covered</h3>
+          <ul style="color:var(--muted);padding-left:18px;margin:0;font-size:14.5px">
+            <li>Service level (80/20 and 90/60), abandon rate, offered and answered vs forecast</li>
+            <li>Interval views by queue (mobility, fibre) and by circle</li>
+            <li>A regulator service-level view by interval and circle</li>
+            <li>Line-of-business view by dialled number: offered, answered, SL, abandon, AHT, hold, ACW, ASA</li>
+          </ul>
         </div>
-      </div>
-      <div class="project">
-        <div><div class="project-id">03</div><div class="project-period">Published</div><span class="project-tag">LinkedIn</span></div>
         <div>
-          <h3 class="project-title">NZ Economy Analysis — Fabric + Power BI</h3>
-          <div class="project-org">Fabric Lakehouse → SQL Views → Semantic Model → Power BI</div>
-          <div class="project-stack-list"><span class="stack-pill">Microsoft Fabric</span><span class="stack-pill">Lakehouse</span><span class="stack-pill">SQL Views</span><span class="stack-pill">Semantic Model</span><span class="stack-pill">Power BI</span></div>
-          <div class="project-body"><p>End-to-end Fabric pipeline analysing NZ economic indicators — housing, labour, OCR, and fuel. Published on LinkedIn using <strong>RBNZ and MBIE public datasets</strong> covering 20+ years of data.</p></div>
+          <h3 style="font-size:16px;margin-bottom:6px">And behind the scenes</h3>
+          <ul style="color:var(--muted);padding-left:18px;margin:0;font-size:14.5px">
+            <li>Advisor productivity: calls, AHT, talk, hold, ACW, not-ready, staffed hours, planned AUX and breaks</li>
+            <li>Shrinkage: scheduled vs present vs planned leave by interval</li>
+            <li>Forecast, capacity and planned AUX inputs</li>
+            <li>A glossary giving every field's source and definition</li>
+          </ul>
         </div>
       </div>
-      <div class="project">
-        <div><div class="project-id">04</div><div class="project-period">2024 – Present</div><span class="project-tag">Live</span></div>
-        <div>
-          <h3 class="project-title">Portfolio AI + Real-Time Analytics</h3>
-          <div class="project-org">Cloudflare Workers · Claude API · Azure Functions · Fabric Eventhouse · Power BI</div>
-          <div class="project-stack-list"><span class="stack-pill">Cloudflare Workers</span><span class="stack-pill">Claude API</span><span class="stack-pill">Azure Functions</span><span class="stack-pill">Fabric Eventhouse</span><span class="stack-pill">KQL</span><span class="stack-pill">Power BI</span></div>
-          <div class="project-body"><p>Every recruiter conversation captured and logged through a real-time pipeline: <strong>Cloudflare → Azure Function → Fabric Eventhouse → Power BI</strong>. Live data visible in the Analytics section below.</p></div>
-        </div>
+      <div class="kpis"><span><b>4,500+</b> agents</span><span><b>22</b> circles</span><span><b>~80%</b> less manual effort</span><span><b>18</b> automated runs a day</span><span><b>900 GB</b> in 1.5 hrs</span></div>
+      <p style="margin-top:8px">The report refreshed with VBA and Power Pivot, visualised the trends and emailed them to operations leaders. 10 GB of trends refreshed and emailed in 10 minutes.</p>
+      <div class="notice">This is an internal report, so no screenshots, names or figures from it are shown here. This page describes its structure only.</div>
+    </div>
+
+    <div class="grid g2" style="margin-top:18px">
+      <div class="card proj">
+        <span class="tag">Power Platform</span>
+        <h3>Power Apps with Fabric write-back</h3>
+        <div class="meta">Power Apps · Dataverse · Microsoft Fabric</div>
+        <p>Field Service Tracker, stock management and order tracking apps that write back to Fabric, replacing repeated manual data entry with validated forms and one reporting source.</p>
       </div>
-      <div class="project">
-        <div><div class="project-id">05</div><div class="project-period">Retail</div></div>
-        <div>
-          <h3 class="project-title">Stock-Out Alert &amp; Auto Re-Order</h3>
-          <div class="project-org">Power Automate · Excel · VBA</div>
-          <div class="project-stack-list"><span class="stack-pill">Power Automate</span><span class="stack-pill">Excel + VBA</span><span class="stack-pill">Email Alerts</span></div>
-          <div class="project-body"><p>Low-stock alerting and supplier re-ordering using Power Automate and Excel/VBA — triggered automatically on fast-moving SKUs across NZ retail operations.</p></div>
-        </div>
+      <div class="card proj">
+        <span class="tag">AI · Live on this site</span>
+        <h3>Portfolio AI assistant and live analytics</h3>
+        <div class="meta">Claude API · Cloudflare Workers · Azure Functions · Fabric Eventhouse · Power BI</div>
+        <p>The chat assistant on this page answers questions about these projects. Each conversation is logged through Cloudflare, an Azure Function and a Fabric Eventhouse into a real-time Power BI report.</p>
+        <p style="margin-top:10px"><a href="https://app.powerbi.com/view?r=eyJrIjoiY2RmYzkyNTUtN2ZjZi00YzU4LTliZTctNDYyNDM1MDdjODY5IiwidCI6ImFmMGY3NDQxLTViYTAtNGJlNS1iZGZmLTI0N2Y3OTBhOWQyYiJ9" target="_blank" rel="noopener">Open the Power BI report ↗</a></p>
+      </div>
+      <div class="card proj">
+        <span class="tag">AI · Copilot Studio</span>
+        <h3>Copilot Studio assistant on Fabric</h3>
+        <div class="meta">Copilot Studio · Fabric Lakehouse · Teams · Power Pages</div>
+        <p>A conversational assistant grounded on Fabric data, surfaced in Teams and Power Pages so teams get self-service answers without waiting for an analyst.</p>
+      </div>
+      <div class="card proj">
+        <span class="tag">Published analysis</span>
+        <h3>NZ economy analysis, Fabric and Power BI</h3>
+        <div class="meta">Lakehouse · SQL views · Semantic model · Power BI</div>
+        <p>Pipeline from public RBNZ and MBIE datasets to a Power BI report covering housing, labour, OCR and fuel over 20+ years. Published on LinkedIn.</p>
+      </div>
+      <div class="card proj">
+        <span class="tag">Automation · Zero licensing cost</span>
+        <h3>PDF invoice to Excel automation</h3>
+        <div class="meta">Power Automate Desktop · VBScript · VBA</div>
+        <p>Loops through emails and attachments and extracts date, order number, customer details and line items straight into Excel, with no manual entry.</p>
+      </div>
+      <div class="card proj">
+        <span class="tag">Retail automation</span>
+        <h3>Stock-out alert and auto re-order</h3>
+        <div class="meta">Power Automate · Excel · VBA</div>
+        <p>Low-stock alerting and supplier re-order emails triggered automatically for fast-moving SKUs.</p>
       </div>
     </div>
-  </section>
-
-  <!-- ARCHITECTURE -->
-  <section class="section arch-section" id="architecture">
-    <div class="section-header">
-      <div class="section-eyebrow">Architecture</div>
-      <h2 class="section-title">How the <em>pipelines work.</em></h2>
-      <p class="section-subtitle">Patterns used across analytics, automation, and real-time event processing.</p>
-    </div>
-    <div class="tools-section">
-      <div class="pipeline-row">
-        <div class="pipeline-label">Standard Analytics Pipeline</div>
-        <div class="pipeline">
-          <span class="pipeline-step">Operational Systems</span><span class="pipeline-arrow">→</span>
-          <span class="pipeline-step">Power Query / APIs</span><span class="pipeline-arrow">→</span>
-          <span class="pipeline-step">Fabric Lakehouse</span><span class="pipeline-arrow">→</span>
-          <span class="pipeline-step">SQL Views</span><span class="pipeline-arrow">→</span>
-          <span class="pipeline-step">Semantic Models</span><span class="pipeline-arrow">→</span>
-          <span class="pipeline-step">Power BI</span>
-        </div>
-      </div>
-      <div class="pipeline-row" style="margin-top:24px">
-        <div class="pipeline-label">Real-Time Event Pipeline</div>
-        <div class="pipeline">
-          <span class="pipeline-step">Live Events</span><span class="pipeline-arrow">→</span>
-          <span class="pipeline-step">Cloudflare Workers</span><span class="pipeline-arrow">→</span>
-          <span class="pipeline-step">Azure Functions</span><span class="pipeline-arrow">→</span>
-          <span class="pipeline-step">Fabric Eventhouse</span><span class="pipeline-arrow">→</span>
-          <span class="pipeline-step">KQL</span><span class="pipeline-arrow">→</span>
-          <span class="pipeline-step">Real-Time Dashboard</span>
-        </div>
-      </div>
-      <div class="pipeline-row" style="margin-top:24px">
-        <div class="pipeline-label">Automation Pipeline</div>
-        <div class="pipeline">
-          <span class="pipeline-step">Trigger / Schedule</span><span class="pipeline-arrow">→</span>
-          <span class="pipeline-step">Power Automate</span><span class="pipeline-arrow">→</span>
-          <span class="pipeline-step">Dataverse / Excel</span><span class="pipeline-arrow">→</span>
-          <span class="pipeline-step">Processing Logic</span><span class="pipeline-arrow">→</span>
-          <span class="pipeline-step">Output / Alert</span>
-        </div>
-      </div>
-      <p style="margin-top:28px;font-size:14px;color:var(--text-2);line-height:1.8;max-width:760px">Centralised reporting ecosystems integrating operational systems, workforce analytics, automation workflows, and real-time monitoring across telecom, retail, and contact centre environments.</p>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section class="section exp-section" id="experience">
-    <div class="section-header">
-      <div class="section-eyebrow">Career</div>
-      <h2 class="section-title">15+ years of <em>experience.</em></h2>
-      <p class="section-subtitle">Analytics and workforce management across telecom, BPO, and retail.</p>
-    </div>
-    <div class="exp-list">
-      <div class="exp-row"><div class="exp-period-text">Dec 2023 – Present</div><div><div class="exp-role">Analytics &amp; AI Engineer</div><div class="exp-company">Freelance · Auckland, NZ</div><div class="exp-desc">Building Microsoft Fabric pipelines, Copilot Studio agents, Power BI semantic models, Azure Functions, and real-time analytics systems.</div></div></div>
-      <div class="exp-row"><div class="exp-period-text">Oct 2020 – Dec 2023</div><div><div class="exp-role">Manager — Workforce Management &amp; Analytics</div><div class="exp-company">Reliance Jio · Mumbai, India</div><div class="exp-desc"><ul><li>Built centralised KPI platform for 4,500+ agents across 22 circles integrating 50+ data sources.</li><li>Reduced manual reporting by ~80% through automation — SQL, Tableau, MS Access, Excel, VBA.</li><li>Published 900 GB of six-month trends in 1.5 hours — faster than Tableau.</li><li>Power BI semantic models became the single source of truth for ops leadership.</li></ul></div></div></div>
-      <div class="exp-row"><div class="exp-period-text">Oct 2017 – Sep 2020</div><div><div class="exp-role">Manager — Workforce Management</div><div class="exp-company">Teleperformance · Mohali, India</div><div class="exp-desc">Operational reporting and measurement strategies for telecom client accounts across multi-site workloads.</div></div></div>
-      <div class="exp-row"><div class="exp-period-text">Mar 2015 – Jun 2017</div><div><div class="exp-role">Manager — Workforce Management</div><div class="exp-company">dr it · Chandigarh, India</div><div class="exp-desc">Exploratory analysis and operational dashboards for executive decisions on growth and profitability.</div></div></div>
-      <div class="exp-row"><div class="exp-period-text">Jan 2011 – Feb 2015</div><div><div class="exp-role">Deputy Manager — Workforce Management</div><div class="exp-company">Teleperformance · Jaipur, India</div><div class="exp-desc">Forecasting, planning, and staffing for a multi-client workforce. Recognised for accurate and timely reporting.</div></div></div>
-      <div class="exp-row"><div class="exp-period-text">Sep 2005 – Jan 2011</div><div><div class="exp-role">Team Leader · Senior Customer Care</div><div class="exp-company">Serco · Competent Synergies · Tata Business Support Services</div><div class="exp-desc">Team Leader at Serco (2009–2011), Competent Synergies (2008–2009), Senior Customer Care at Tata BSS (2005–2008).</div></div></div>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section class="section" id="education">
-    <div class="section-header">
-      <div class="section-eyebrow">Education</div>
-      <h2 class="section-title">Qualifications &amp; <em>certifications.</em></h2>
-    </div>
-    <div class="edu-grid">
-      <div class="edu-card"><div class="edu-icon">🎓</div><h4>Master of Business Administration</h4><p>Information Technology · Lovely Professional University</p></div>
-      <div class="edu-card"><div class="edu-icon">📚</div><h4>Bachelor of Business Administration</h4><p>Sikkim University, Gangtok</p></div>
-    </div>
-    <div class="certs">
-      <span class="cert">Six Sigma Green Belt</span>
-      <span class="cert">Six Sigma Yellow Belt</span>
-      <span class="cert">Project Management</span>
-      <span class="cert">Data Visualization · LinkedIn Learning</span>
-    </div>
-  </section>
-
-  <!-- LIVE ANALYTICS -->
-  <section class="analytics-section" id="analytics">
-    <div class="analytics-eyebrow">Live Analytics</div>
-    <h2 class="analytics-title">AI assistant <em>in action.</em></h2>
-    <p class="analytics-subtitle">Every conversation on this portfolio is captured and visualised in real time.</p>
-    <div class="analytics-pipeline">
-      <span class="pipeline-step-dark">Visitor question</span><span class="pipeline-arrow-dark">→</span>
-      <span class="pipeline-step-dark">Cloudflare Worker</span><span class="pipeline-arrow-dark">→</span>
-      <span class="pipeline-step-dark">Claude API</span><span class="pipeline-arrow-dark">→</span>
-      <span class="pipeline-step-dark">Azure Function</span><span class="pipeline-arrow-dark">→</span>
-      <span class="pipeline-step-dark">Fabric Eventhouse</span><span class="pipeline-arrow-dark">→</span>
-      <span class="pipeline-step-dark">Power BI</span>
-    </div>
-    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px">
-      <a href="https://app.fabric.microsoft.com/links/HLhmzCOLI4?ctid=af0f7441-5ba0-4be5-bdff-247f790a9d2b&pbi_source=linkShare&experience=fabric-developer&extensionScenario=openArtifact&v-_startTime=1hours&v-_endTime=now&page=9747199d-21af-4338-a451-22c9749c535b" target="_blank" class="analytics-btn">Real-Time Dashboard ↗</a>
-      <a href="https://app.powerbi.com/view?r=eyJrIjoiY2RmYzkyNTUtN2ZjZi00YzU4LTliZTctNDYyNDM1MDdjODY5IiwidCI6ImFmMGY3NDQxLTViYTAtNGJlNS1iZGZmLTI0N2Y3OTBhOWQyYiJ9" target="_blank" class="analytics-btn">Power BI Report ↗</a>
-      <a href="dashboard.png" target="_blank" class="analytics-btn">Screenshot ↗</a>
-    </div>
-    <div class="analytics-tabs">
-      <button class="analytics-tab active" onclick="showAnalyticsTab('powerbi',this)">Power BI</button>
-      <button class="analytics-tab" onclick="showAnalyticsTab('screenshot',this)">Screenshot</button>
-    </div>
-    <div class="analytics-panel active" id="panel-powerbi">
-      <div style="border-radius:6px;overflow:hidden">
-        <iframe title="Chatlogs-bot" width="100%" height="500" src="https://app.powerbi.com/view?r=eyJrIjoiY2RmYzkyNTUtN2ZjZi00YzU4LTliZTctNDYyNDM1MDdjODY5IiwidCI6ImFmMGY3NDQxLTViYTAtNGJlNS1iZGZmLTI0N2Y3OTBhOWQyYiJ9" frameborder="0" allowFullScreen="true"></iframe>
-      </div>
-      <p style="font-size:11px;color:rgba(255,255,255,.2);margin-top:8px">Refreshes hourly · No login required</p>
-    </div>
-    <div class="analytics-panel" id="panel-screenshot">
-      <div style="border-radius:6px;overflow:hidden">
-        <img src="dashboard.png" alt="Fabric Real-Time Dashboard" style="width:100%;display:block;border-radius:6px"/>
-      </div>
-      <p style="font-size:11px;color:rgba(255,255,255,.2);margin-top:8px">Fabric Eventhouse · 30-second refresh · Requires Microsoft account</p>
-    </div>
-    <a href="#about" class="analytics-btn" style="margin-top:20px;display:inline-flex">Back to top ↑</a>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <h2 class="footer-title">Let's work <em>together.</em></h2>
-    <p class="footer-tagline">Open to Microsoft Fabric, Power BI, Analytics Engineering, and Power Platform roles across New Zealand.</p>
-    <div class="footer-links">
-      <a href="mailto:harjaspreetsohi@outlook.com" class="footer-link">Email</a>
-      <a href="tel:+64224155125" class="footer-link">+64 22 415 5125</a>
-      <a href="https://www.linkedin.com/in/harjaspreetsingh/" target="_blank" class="footer-link">LinkedIn ↗</a>
-      <a href="https://github.com/Harjassohi" target="_blank" class="footer-link">GitHub ↗</a>
-    </div>
-    <div class="footer-meta">
-      <span>Harjaspreet Singh · Auckland, New Zealand · 2026</span>
-      <span>Microsoft Fabric · Azure · Cloudflare</span>
-    </div>
-  </footer>
-
-</main>
-</div>
-
-<!-- CHATBOT -->
-<div id="chat-bubble">
-  <button id="chat-toggle" onclick="toggleChat()" aria-label="Chat">
-    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
-    <div class="chat-dot"></div>
-  </button>
-</div>
-
-<div id="chat-window">
-  <div id="chat-header">
-    <div id="chat-header-avatar">HS</div>
-    <div id="chat-header-info">
-      <div id="chat-header-name">Harjaspreet's Assistant</div>
-      <div id="chat-header-status">Ask me anything</div>
-    </div>
-    <button id="chat-close" onclick="toggleChat()">✕</button>
   </div>
-  <div id="chat-messages"></div>
-  <div class="chat-suggestions" id="chat-suggestions">
-    <button class="chat-suggestion" onclick="sendSuggestion(this)">Power Platform end to end?</button>
-    <button class="chat-suggestion" onclick="sendSuggestion(this)">Fabric architecture experience?</button>
-    <button class="chat-suggestion" onclick="sendSuggestion(this)">SQL and Power BI depth?</button>
-    <button class="chat-suggestion" onclick="sendSuggestion(this)">Available in New Zealand?</button>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="eyebrow">Tools and skills</div>
+    <h2>Tools and skills.</h2>
+    <p class="lead">Tools used across these projects.</p>
+    <div class="card">
+      <div class="skillrow"><strong>BI and reporting</strong><div><span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">Semantic models</span><span class="chip">Row-level security</span><span class="chip">Power Pivot</span><span class="chip">Advanced Excel</span><span class="chip">Tableau</span></div></div>
+      <div class="skillrow"><strong>Data and SQL</strong><div><span class="chip">T-SQL</span><span class="chip">Power Query</span><span class="chip">Star schema modelling</span><span class="chip">MS Access</span><span class="chip">SQL Server</span><span class="chip">Data validation</span></div></div>
+      <div class="skillrow"><strong>Microsoft Fabric</strong><div><span class="chip">Warehouse</span><span class="chip">Lakehouse</span><span class="chip">Pipelines and Copy jobs</span><span class="chip">Direct Lake</span><span class="chip">Eventhouse and KQL</span><span class="chip">SQL database</span></div></div>
+      <div class="skillrow"><strong>Automation and Power Platform</strong><div><span class="chip">Power Automate</span><span class="chip">Power Apps</span><span class="chip">Power Pages</span><span class="chip">Dataverse</span><span class="chip">VBA</span><span class="chip">VBScript</span></div></div>
+      <div class="skillrow"><strong>AI and agents</strong><div><span class="chip">Fabric Data Agent</span><span class="chip">Copilot Studio</span><span class="chip">Claude API</span><span class="chip">Azure Functions</span><span class="chip">Cloudflare Workers</span></div></div>
+      <div class="skillrow"><strong>Domain knowledge</strong><div><span class="chip">Workforce management</span><span class="chip">Forecasting and scheduling</span><span class="chip">Service level and abandon rate</span><span class="chip">AHT, hold, ACW, AUX</span><span class="chip">Cisco telephony</span><span class="chip">NICE IEX</span><span class="chip">Six Sigma</span></div></div>
+    </div>
   </div>
-  <div id="chat-input-area">
-    <textarea id="chat-input" placeholder="Ask about skills, projects, availability..." rows="1" onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
-    <button id="chat-send" onclick="sendMessage()">
-      <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
-    </button>
+</section>
+
+<footer>
+  <div class="wrap">
+    Harjaspreet Singh · Data analytics projects · Built with Microsoft Fabric, Power BI and Copilot Studio. Demo data is synthetic.
+    <div class="links">
+      <a href="https://www.linkedin.com/in/harjaspreetsingh/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://github.com/Harjassohi" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
   </div>
-  <div id="chat-footer-note">
-    Claude API → Cloudflare → Azure → Fabric
-    <a href="https://app.powerbi.com/view?r=eyJrIjoiY2RmYzkyNTUtN2ZjZi00YzU4LTliZTctNDYyNDM1MDdjODY5IiwidCI6ImFmMGY3NDQxLTViYTAtNGJlNS1iZGZmLTI0N2Y3OTBhOWQyYiJ9" target="_blank" class="chat-dash-btn">Live Dashboard ↗</a>
+</footer>
+
+<!-- Chat -->
+<button id="chat-fab" onclick="toggleChat()" aria-label="Open AI assistant">💬 Ask about the projects</button>
+<div id="chat" role="dialog" aria-label="AI assistant">
+  <header><div><b>Project assistant</b><small>Ask about the projects, tools and approach</small></div><button onclick="toggleChat()" aria-label="Close">✕</button></header>
+  <div id="msgs"></div>
+  <div id="sugs">
+    <button>What can you do with data?</button>
+    <button>Tell me about the Fabric project</button>
+    <button>What was the original Excel report?</button>
+    <button>Which tools do you use?</button>
+    <button>How do the AI agents work?</button>
   </div>
+  <form id="form"><input id="inp" placeholder="Ask a question..." autocomplete="off" aria-label="Your question"><button type="submit">Send</button></form>
+  <div class="note">AI answers from the project details on this page. It can make mistakes.</div>
 </div>
 
 <script>
-const SYSTEM_PROMPT = `You are a professional assistant representing Harjaspreet Singh, an Analytics Engineer based in Auckland, New Zealand.
+/* ===== Chat assistant =====
+   Primary: Claude via your Cloudflare Worker (key stays server-side).
+   Fallback: built-in answers so the chat still works if the Worker is down. */
+const WORKER_URL = 'https://portfolio-agent.hardy9za.workers.dev';
+const MODEL = 'claude-haiku-4-5-20251001';
 
-ABOUT:
-- 15+ years in operational analytics, WFM, and automation
-- Location: Auckland, New Zealand
-- Phone: +64 22 415 5125
-- NZ Resident — available immediately, no sponsorship needed
-- Email: harjaspreetsohi@outlook.com
-- LinkedIn: linkedin.com/in/harjaspreetsingh
-- GitHub: github.com/Harjassohi
+const PROFILE = `You answer visitors' questions on this portfolio page, speaking in the first person as the person who built the projects (use "I", "my", "me"). Never use his name in replies. Answer questions about my projects, tools, skills and how the work is built. This is a project showcase, not a job advert: do not discuss salary, availability or recruitment, and for anything outside the projects point to my LinkedIn (linkedin.com/in/harjaspreetsingh) or GitHub (github.com/Harjassohi).
 
-POSITIONING: Analytics Engineer — Microsoft Fabric and Power Platform
+WHAT HE CAN DO
+- Build Power BI reports and semantic models with DAX measures, heat-map matrices and interval analysis.
+- Clean, model and query data with T-SQL, Power Query and star schemas; validate row counts, dates and orphan records in the SQL layer.
+- Contact-centre and workforce analytics: service level (80/20 and 90/60), abandon rate, AHT, hold, ACW, AUX, forecast vs offered, shrinkage, agent productivity.
+- Automate reporting with Fabric pipelines, Power Automate, VBA and scheduled refresh.
+- Make data conversational with a Fabric Data Agent and a Copilot Studio agent.
+- Modernise legacy Excel, Access and VBA reporting while keeping trusted KPI definitions.
 
-SKILLS: Microsoft Fabric, Lakehouse, Eventhouse, KQL, Power BI, Semantic Models, DAX, Power Query, Power Apps, Power Automate, Copilot Studio, Azure Functions, Cloudflare Workers, SQL, VBA, VBScript, MS Access, Power Pivot, Excel, Tableau, Six Sigma
+FLAGSHIP PROJECT: Real-Time Contact Centre Monitoring on Microsoft Fabric (synthetic data)
+- Rebuild of an Excel/Access/VBA performance report: CSV dumps to Lakehouse, Copy jobs into a Warehouse, T-SQL star schema, Direct Lake semantic model, Power BI report with date and interval heat-map matrices and an interval table.
+- Fabric Data Agent (read-only) answers questions on top of the semantic model. A Copilot Studio agent writes forecast overrides to a Fabric SQL database through a stored procedure with validation, confirm-before-save and an audit trail. A pipeline syncs overrides into the Warehouse and refreshes the semantic model.
+- Row-level security by team leader is planned, not yet built. Business logic sits in SQL, with DAX used for measures.
 
-KEY FACTS:
-- Built KPI platform for 4500+ agents across 22 circles with 50+ data sources
-- 900 GB processed in 1.5 hours using Power Pivot — faster than Tableau
-- 80% manual reporting effort eliminated through automation
-- Real-time analytics pipeline live on this portfolio
-- Copilot Studio AI agent deployed on Fabric Lakehouse
-- PDF invoice automation at zero licensing cost
-- NZ economic analysis published using Fabric Lakehouse pipeline
+THE ORIGINAL: Hourly Performance Report (Excel, Access, VBA, Power Pivot), built for a large telecom contact centre
+- Inputs: Cisco service-level dumps by call queue and 30-minute interval, and an agent productivity dump.
+- One workbook of about 24 tabs and around 23 MB: interval views by queue and by circle, a regulator service-level view, line-of-business view by dialled number, advisor productivity (calls, AHT, talk, hold, ACW, not-ready, staffed hours, planned AUX and break), shrinkage (scheduled vs present vs planned leave), forecast and capacity inputs, and a glossary of field sources and definitions.
+- Scale: 4,500+ agents, 22 circles, 50+ data sources, about 80% less manual reporting, 18 automated runs a day, 900 GB of six-month trends published in 1.5 hours with Power Pivot, 10 GB of trends refreshed and emailed in 10 minutes.
+- It is an internal report: never quote names, emails, agent IDs or figures from it, and say so if asked.
 
-TARGET ROLES: Microsoft Fabric Developer, Analytics Engineer, Power BI Developer, Power Platform Developer, Business Analyst
+OTHER PROJECTS
+- Power Apps with Dataverse write-back to Fabric (field service tracker, stock management, order tracking).
+- Portfolio AI assistant with real-time analytics: Claude API, Cloudflare Worker, Azure Function, Fabric Eventhouse, Power BI.
+- Copilot Studio assistant on Fabric data surfaced in Teams and Power Pages.
+- NZ economy analysis from RBNZ and MBIE data in Fabric and Power BI, published on LinkedIn.
+- PDF invoice to Excel automation (Power Automate Desktop, VBScript); stock-out alert and auto re-order (Power Automate, VBA).
 
-STYLE: Confident, specific, concise. 2-3 sentences ideal. Human and warm. Never make up facts.`;
+TOOLS (rate honestly)
+- Strongest: Power BI, DAX, semantic models, advanced Excel, Power Pivot, Power Query, VBA, contact-centre and WFM analytics.
+- Strong: Microsoft Fabric, Power Automate, Power Apps, Copilot Studio, Tableau, MS Access.
+- Intermediate: SQL and T-SQL, KQL, Azure Functions, Cloudflare Workers, Claude API. Basic Python.
 
-let chatOpen=false,isTyping=false,conversationHistory=[],greeted=false;
+RULES
+- Be specific, friendly and concise (2 to 4 sentences, a short list only if asked). Never invent facts, tools, numbers or projects. If you do not know, say so.
+- The Fabric project uses synthetic data; say so when relevant.
+- Plain text only: no markdown, no asterisks, no headings. Keep a neutral, factual tone with no hype. Always speak as "I"; do not refer to myself in the third person or by name.`;
 
-function toggleChat(){
-  chatOpen=!chatOpen;
-  const win=document.getElementById('chat-window');
-  if(chatOpen){
-    win.classList.add('open');
-    if(!greeted){greeted=true;setTimeout(()=>addBotMessage("Hi — ask me about Harjaspreet's work, skills, or availability in New Zealand."),350);}
-    setTimeout(()=>document.getElementById('chat-input').focus(),250);
-  }else{win.classList.remove('open');}
+const FALLBACK = [
+  {k:['do with data','what can','can you do','capab','offer','help'], a:"I build Power BI reports and semantic models, model data in SQL, analyse contact-centre metrics (service level, abandon rate, AHT, forecast vs offered), automate manual reporting, and add AI assistants that answer questions or update planned numbers."},
+  {k:['original','excel','access','vba','legacy','hourly','before'], a:"The original was an Excel, Access, VBA and Power Pivot report I built for a large telecom contact centre: Cisco service-level and agent productivity dumps in, one workbook of about 24 tabs out, covering service level, abandon rate, interval and circle views, advisor productivity, shrinkage and forecast. It was refreshed with VBA and emailed. It is an internal report, so only its structure is described here."},
+  {k:['fabric','project','real-time','real time','rebuild','lakehouse','warehouse','pipeline'], a:"My main project rebuilds that report on Microsoft Fabric: CSV dumps into a Lakehouse, Copy jobs into a Warehouse, a T-SQL star schema, a Direct Lake semantic model and a Power BI report with heat-map matrices. Pipelines refresh it on a schedule. It uses synthetic data."},
+  {k:['agent','copilot','data agent','ai','chat','write-back','writeback','override','forecast'], a:"I built two agents on top of the report. A read-only Fabric Data Agent answers questions about the data in plain English. A Copilot Studio agent changes planned numbers through a stored procedure with validation, confirmation before saving and an audit trail; a pipeline then syncs the change into the report."},
+  {k:['tool','skill','stack','technology','software','power bi','dax','tableau'], a:"I use Power BI and DAX, semantic modelling, T-SQL, Power Query, advanced Excel, Power Pivot and VBA, plus Microsoft Fabric, Power Automate, Power Apps and Copilot Studio. I also use Tableau and MS Access."},
+  {k:['contact centre','call centre','centre','wfm','workforce','telecom','jio','service level','abandon','aht'], a:"Contact-centre analytics is my main domain: service level (80/20, 90/60), abandon rate, AHT, hold, ACW, forecast vs offered, shrinkage and agent productivity. The reporting I built covered 4,500+ agents across 22 circles and 50+ data sources, with about 80% less manual reporting."},
+  {k:['sql','database','t-sql','query','model'], a:"I use T-SQL for transformation and validation in Fabric Warehouse: star schemas, stored procedures, and checks on row counts, dates and orphan records. DAX is used for measures."},
+  {k:['automat','power automate','macro','invoice','stock'], a:"My automation work uses Fabric pipelines, Power Automate and VBA: a 10-minute refresh-and-email run for large trend reports, PDF invoices extracted into Excel with no manual entry, and low-stock alerts with automatic supplier re-ordering."},
+  {k:['linkedin','github','link','reach','contact'], a:"My LinkedIn is linkedin.com/in/harjaspreetsingh and my GitHub is github.com/Harjassohi."}
+];
+function localAnswer(q){
+  q=q.toLowerCase(); let best=null,score=0;
+  for(const f of FALLBACK){const s=f.k.filter(w=>q.includes(w)).length; if(s>score){score=s;best=f;}}
+  return best?best.a:"I can answer questions about my projects on this page, the tools I use and how they were built. For anything else, see LinkedIn (linkedin.com/in/harjaspreetsingh).";
 }
-function addBotMessage(text){
-  const msgs=document.getElementById('chat-messages');
-  const div=document.createElement('div');div.className='chat-msg';
-  div.innerHTML='<div class="chat-msg-avatar">HS</div><div class="chat-msg-bubble">'+text+'</div>';
-  msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;
-}
-function addUserMessage(text){
-  const msgs=document.getElementById('chat-messages');
-  const div=document.createElement('div');div.className='chat-msg user';
-  div.innerHTML='<div class="chat-msg-avatar">You</div><div class="chat-msg-bubble">'+text+'</div>';
-  msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;
-}
-function showTyping(){
-  const msgs=document.getElementById('chat-messages');
-  const div=document.createElement('div');div.className='chat-msg';div.id='typing-indicator';
-  div.innerHTML='<div class="chat-msg-avatar">HS</div><div class="chat-typing"><span></span><span></span><span></span></div>';
-  msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;
-}
-function hideTyping(){const t=document.getElementById('typing-indicator');if(t)t.remove();}
-function hideSuggestions(){const s=document.getElementById('chat-suggestions');if(s)s.style.display='none';}
-async function sendMessage(){
-  const input=document.getElementById('chat-input');
-  const text=input.value.trim();
-  if(!text||isTyping)return;
-  hideSuggestions();addUserMessage(text);
-  conversationHistory.push({role:'user',content:text});
-  input.value='';input.style.height='auto';
-  isTyping=true;document.getElementById('chat-send').disabled=true;showTyping();
+
+const $ = s=>document.querySelector(s);
+const msgs=$('#msgs'), inp=$('#inp'); let history=[], busy=false, greeted=false;
+
+function add(text,cls){const d=document.createElement('div');d.className='m '+cls;d.textContent=text;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;return d;}
+function toggleChat(){const c=$('#chat');c.classList.toggle('open');if(c.classList.contains('open')){if(!greeted){greeted=true;add("Hi. Ask me about the Fabric rebuild, the original Excel report, the AI agents or the tools I use.",'bot');}setTimeout(()=>inp.focus(),150);}}
+function openChat(){if(!$('#chat').classList.contains('open'))toggleChat();}
+
+function clean(t){return t.replace(/\*\*(.+?)\*\*/g,'$1').replace(/__(.+?)__/g,'$1').replace(/^#{1,6}\s+/gm,'').replace(/^\s*[*-]\s+/gm,'- ').replace(/\*/g,'').trim();}
+async function ask(text){
+  if(busy||!text.trim())return; busy=true; $('#sugs').style.display='none';
+  add(text,'me'); history.push({role:'user',content:text}); inp.value='';
+  const t=add('Thinking...','bot typing');
+  let reply;
   try{
-    const r=await fetch('https://portfolio-agent.hardy9za.workers.dev',{
-      method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:1000,system:SYSTEM_PROMPT,messages:conversationHistory})
-    });
-    const data=await r.json();hideTyping();
-    if(data.content&&data.content[0]){
-      const reply=data.content[0].text;
-      conversationHistory.push({role:'assistant',content:reply});
-      addBotMessage(reply);
-    }else{addBotMessage("Reach out at harjaspreetsohi@outlook.com or on LinkedIn.");}
-  }catch(e){hideTyping();addBotMessage("Having trouble connecting — email harjaspreetsohi@outlook.com or connect on LinkedIn.");}
-  isTyping=false;document.getElementById('chat-send').disabled=false;
+    const ctrl=new AbortController(); const to=setTimeout(()=>ctrl.abort(),12000);
+    const r=await fetch(WORKER_URL,{method:'POST',headers:{'Content-Type':'application/json'},signal:ctrl.signal,
+      body:JSON.stringify({model:MODEL,max_tokens:500,system:PROFILE,messages:history.slice(-10)})});
+    clearTimeout(to);
+    const data=await r.json();
+    reply=data&&data.content&&data.content[0]&&data.content[0].text;
+    if(reply) reply=clean(reply);
+    if(!reply) throw new Error('empty');
+  }catch(e){ reply=localAnswer(text); }
+  t.remove(); history.push({role:'assistant',content:reply}); add(reply,'bot'); busy=false;
 }
-function sendSuggestion(btn){document.getElementById('chat-input').value=btn.textContent;sendMessage();}
-function handleKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMessage();}}
-function autoResize(el){el.style.height='auto';el.style.height=Math.min(el.scrollHeight,100)+'px';}
-function showAnalyticsTab(tab,btn){
-  document.querySelectorAll('.analytics-panel').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.analytics-tab').forEach(b=>b.classList.remove('active'));
-  document.getElementById('panel-'+tab).classList.add('active');btn.classList.add('active');
-}
+$('#form').addEventListener('submit',e=>{e.preventDefault();ask(inp.value);});
+document.querySelectorAll('#sugs button').forEach(b=>b.addEventListener('click',()=>ask(b.textContent)));
 </script>
 </body>
 </html>
